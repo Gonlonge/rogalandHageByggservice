@@ -452,6 +452,11 @@ import { useInView } from "react-intersection-observer";
 import { db } from "../../firebaseConfig";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
+/** ✅ Import images instead of using "/src/..." */
+import aleksanderPhoto from "../../assets/workers/aleksander.jpg";
+// If the second person has a different file, change this import:
+import alexPhoto from "../../assets/workers/alex.jpg";
+
 const inquiryTypes = [
     { value: "general", label: "Generell forespørsel" },
     { value: "befaring", label: "Ønsker befaring" },
@@ -464,14 +469,14 @@ const contactPersons = [
         role: "Daglig leder / Prosjekt",
         email: "rhb@rogalandhageogbyggservice.no",
         phone: "+47 93 22 09 88",
-        photoUrl: "/src/assets/workers/aleksander.jpg",
+        photoUrl: aleksanderPhoto,
     },
     {
         name: "Àlēx Mäldé",
         role: "Drift & kundekontakt",
         email: "rhb@rogalandhageogbyggservice.no",
         phone: "+47 93 22 09 88",
-        photoUrl: "/src/assets/workers/alex.jpg",
+        photoUrl: alexPhoto,
     },
 ];
 
