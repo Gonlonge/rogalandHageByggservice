@@ -78,7 +78,7 @@ export default function Footer() {
                                     variant="contained"
                                     color="success"
                                     size="large"
-                                    href="/contact"
+                                    href="tel:+4793220988"
                                     sx={{
                                         bgcolor: "#1f8a52",
                                         ":hover": { bgcolor: "#187246" },
@@ -86,8 +86,9 @@ export default function Footer() {
                                         borderRadius: 2,
                                     }}
                                 >
-                                    Få gratis befaring
+                                    Gratis befaring
                                 </Button>
+
                                 <Button
                                     variant="outlined"
                                     color="inherit"

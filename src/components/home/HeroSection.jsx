@@ -12,13 +12,10 @@
 // import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 // import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
-// // ✅ Local images for the right side
 // import gartnerWorkingTwo from "../../assets/gartner-working-two.png";
 // import gartnerWorking from "../../assets/gartner-working.png";
-
 // import houseGarden from "../../assets/house-garden.png";
 
-// // ✅ Background image (replace if you add a local one)
 // const backgroundUrl = houseGarden;
 
 // function HeroSection() {
@@ -38,7 +35,6 @@
 //                 alignItems: "center",
 //                 overflow: "hidden",
 //                 pb: { xs: 8, md: 10 },
-//                 // Ny bakgrunn: foto + mørk grønn “vignette” + diagonal overlay
 //                 backgroundColor: theme.palette.success.dark,
 //                 "&::before": {
 //                     content: '""',
@@ -62,7 +58,7 @@
 //                 },
 //             }}
 //         >
-//             {/* Diagonal stripe element */}
+//             {/* Dekorstripe */}
 //             <Box
 //                 aria-hidden
 //                 sx={{
@@ -89,7 +85,7 @@
 //                 }}
 //             >
 //                 <Grid container spacing={6} alignItems="center">
-//                     {/* VENSTRE: Glasskort med innhold */}
+//                     {/* Venstre side */}
 //                     <Grid item xs={12} md={6}>
 //                         <Box
 //                             sx={{
@@ -98,7 +94,7 @@
 //                                 backgroundColor: "rgba(20,40,20,0.35)",
 //                                 border: "1px solid rgba(255,255,255,0.15)",
 //                                 borderRadius: 3,
-//                                 p: { xs: 3, sm: 4 },
+//                                 p: { xs: 3, sm: 5 },
 //                                 boxShadow: "0 20px 60px rgba(0,0,0,0.35)",
 //                             }}
 //                         >
@@ -128,7 +124,7 @@
 //                                     },
 //                                 }}
 //                             >
-//                                 Driftssikkert vedlikehold av ute & bygg
+//                                 Driftssikkert vedlikehold av ute- og byggområder
 //                             </Typography>
 
 //                             <Typography
@@ -139,17 +135,17 @@
 //                                     fontSize: { xs: "1.05rem", sm: "1.15rem" },
 //                                 }}
 //                             >
-//                                 Vi leverer vedlikehold av uteområder,
-//                                 vaktmestertjenester og små byggoppdrag for
-//                                 private, næringsliv, borettslag/sameier og
-//                                 barnehager. Ryddig, pålitelig og gjort
-//                                 skikkelig.
+//                                 Hagepleie, tømrertjenester og vedlikeholdsarbeid
+//                                 Vi leverer høy kvalitet, ryddig gjennomføring og
+//                                 dokumentert resultat – med skreddersydde avtaler
+//                                 tilpasset dine behov.
 //                             </Typography>
 
 //                             {/* Service chips */}
 //                             <Stack
 //                                 direction="row"
-//                                 spacing={1}
+//                                 spacing={1.5} // 🔹 gir horisontal avstand mellom chips
+//                                 rowGap={1.5} // 🔹 gir vertikal avstand hvis de brytes til ny linje
 //                                 sx={{ mt: 3, flexWrap: "wrap" }}
 //                             >
 //                                 {[
@@ -168,14 +164,13 @@
 //                                             borderColor:
 //                                                 "rgba(255,255,255,0.35)",
 //                                             backdropFilter: "blur(6px)",
-//                                             mr: 1,
-//                                             mb: 1,
+//                                             fontWeight: 500,
+//                                             px: 0.5,
 //                                         }}
 //                                     />
 //                                 ))}
 //                             </Stack>
 
-//                             {/* CTA knapper – ny stil (mer kantete) */}
 //                             <Stack
 //                                 direction="row"
 //                                 spacing={2}
@@ -210,7 +205,7 @@
 //                                 <Button
 //                                     variant="outlined"
 //                                     size="large"
-//                                     startIcon={<SearchOutlinedIcon />} // 👈 swapped icon
+//                                     startIcon={<SearchOutlinedIcon />}
 //                                     href="/about"
 //                                     sx={{
 //                                         borderRadius: 2,
@@ -234,68 +229,10 @@
 //                                     Se tjenester
 //                                 </Button>
 //                             </Stack>
-
-//                             {/* Stats – pill cards i stedet for bare tekst */}
-//                             <Stack
-//                                 direction="row"
-//                                 spacing={2}
-//                                 sx={{ mt: 4, flexWrap: "wrap" }}
-//                             >
-//                                 {[
-//                                     {
-//                                         number: "24t",
-//                                         text: "Svar på henvendelser",
-//                                     },
-//                                     { number: "100+", text: "Faste avtaler" },
-//                                     {
-//                                         number: "4.9/5",
-//                                         text: "Kundetilfredshet*",
-//                                     },
-//                                 ].map((s) => (
-//                                     <Box
-//                                         key={s.text}
-//                                         sx={{
-//                                             px: 2.5,
-//                                             py: 1.25,
-//                                             borderRadius: 999,
-//                                             border: "1px solid rgba(255,255,255,0.2)",
-//                                             backgroundColor:
-//                                                 "rgba(255,255,255,0.08)",
-//                                             display: "flex",
-//                                             alignItems: "center",
-//                                             gap: 1.25,
-//                                         }}
-//                                     >
-//                                         <Typography
-//                                             variant="h6"
-//                                             sx={{
-//                                                 fontWeight: 900,
-//                                                 color: "#fff",
-//                                             }}
-//                                         >
-//                                             {s.number}
-//                                         </Typography>
-//                                         <Typography
-//                                             variant="body2"
-//                                             sx={{ opacity: 0.85 }}
-//                                         >
-//                                             {s.text}
-//                                         </Typography>
-//                                     </Box>
-//                                 ))}
-//                             </Stack>
-
-//                             <Typography
-//                                 variant="caption"
-//                                 sx={{ display: "block", mt: 1.5, opacity: 0.7 }}
-//                             >
-//                                 *Basert på interne tilbakemeldinger – oppdateres
-//                                 fortløpende.
-//                             </Typography>
 //                         </Box>
 //                     </Grid>
 
-//                     {/* HØYRE: Bilder i “staggered cards” med ny komposisjon */}
+//                     {/* Høyre side – staggered images */}
 //                     <Grid item xs={12} md={6}>
 //                         <Box
 //                             sx={{
@@ -303,7 +240,6 @@
 //                                 height: { xs: 380, sm: 520, md: 600 },
 //                             }}
 //                         >
-//                             {/* Bakre kort */}
 //                             <Box
 //                                 sx={{
 //                                     position: "absolute",
@@ -330,7 +266,6 @@
 //                                 />
 //                             </Box>
 
-//                             {/* Fremre kort */}
 //                             <Box
 //                                 sx={{
 //                                     position: "absolute",
@@ -357,7 +292,6 @@
 //                                 />
 //                             </Box>
 
-//                             {/* Sirkulær highlight */}
 //                             <Box
 //                                 aria-hidden
 //                                 sx={{
@@ -378,7 +312,7 @@
 //                 </Grid>
 //             </Container>
 
-//             {/* Wave divider nederst */}
+//             {/* Wave-divider nederst */}
 //             <Box
 //                 aria-hidden
 //                 sx={{
@@ -423,8 +357,8 @@ import { useInView } from "react-intersection-observer";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
-import gartnerWorkingTwo from "../../assets/gartner-working-two.png";
-import gartnerWorking from "../../assets/gartner-working.png";
+import gartnerWorkingTwo from "../../assets/privateImages/uteområde-formklippet.jpg";
+import uteområdeFormklippet from "../../assets/privateImages/innvendig-kjøkken.jpg";
 import houseGarden from "../../assets/house-garden.png";
 
 const backgroundUrl = houseGarden;
@@ -535,7 +469,7 @@ function HeroSection() {
                                     },
                                 }}
                             >
-                                Driftssikkert vedlikehold av ute & bygg
+                                Driftssikkert vedlikehold av ute- og byggområder
                             </Typography>
 
                             <Typography
@@ -546,10 +480,11 @@ function HeroSection() {
                                     fontSize: { xs: "1.05rem", sm: "1.15rem" },
                                 }}
                             >
-                                Vi leverer vedlikehold av uteområder,
-                                vaktmestertjenester og små byggoppdrag for
-                                private, næringsliv, borettslag/sameier og
-                                barnehager. Ryddig, pålitelig og gjort skikkelig
+                                Hos Rogaland Hage & byggservice får du hjelp med
+                                alt fra hagearbeid til vedlikehold og små
+                                byggeoppdrag. Vi tilpasser tjenestene etter dine
+                                behov – enten du er privatkunde, borettslag
+                                eller bedrift.
                             </Typography>
 
                             {/* Service chips */}
@@ -590,7 +525,7 @@ function HeroSection() {
                                 <Button
                                     variant="contained"
                                     size="large"
-                                    href="/contact"
+                                    href="tel:+4793220988" // 🔹 Direkte ringe-link
                                     endIcon={<ArrowForwardIcon />}
                                     sx={{
                                         borderRadius: 2,
@@ -610,7 +545,7 @@ function HeroSection() {
                                         transition: "all .25s ease",
                                     }}
                                 >
-                                    Bestill befaring
+                                    Gratis befaring
                                 </Button>
 
                                 <Button
@@ -692,7 +627,7 @@ function HeroSection() {
                             >
                                 <Box
                                     component="img"
-                                    src={gartnerWorking}
+                                    src={uteområdeFormklippet}
                                     alt="Byggservice – kontroll og kvalitet"
                                     loading="lazy"
                                     sx={{

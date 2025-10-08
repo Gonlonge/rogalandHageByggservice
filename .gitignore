@@ -1,0 +1,63 @@
+# ─── Node / React standard ──────────────────────────────
+node_modules/
+dist/
+build/
+out/
+
+# ─── Environment variables ─────────────────────────────
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ─── Logs ───────────────────────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ─── Cache & Coverage ──────────────────────────────────
+.cache/
+.parcel-cache/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# ─── Editor & OS junk ──────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*.swm
+
+# ─── Test / Lint output ────────────────────────────────
+/junit
+/nyc_output
+
+# ─── Optional lock files (uncomment if you don't want them tracked)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ─── Temporary files ───────────────────────────────────
+tmp/
+temp/
+*.pid
+*.seed
+*.pid.lock
+
+# ─── Firebase / Local services ─────────────────────────
+.firebase/
+
+# ─── Expo / RN (if any) ─────────────────────────────────
+.expo/
+.expo-shared/
+
+# ─── OS-specific ───────────────────────────────────────
+ehthumbs.db
+Desktop.ini

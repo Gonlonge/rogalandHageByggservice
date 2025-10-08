@@ -13,7 +13,7 @@ import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 
 // Bytt gjerne til ditt gartner-bilde
-import gartnerWorking from "../../assets/gartner-working.png";
+import gartnerWorking from "../../assets/privateImages/utvendig-hage.jpg";
 // Fallback hvis ikke finnes lokalt
 import houseGardenTwo from "../../assets/house-garden-two.png";
 
@@ -162,7 +162,7 @@ function CtaSection() {
                                 <Button
                                     variant="contained"
                                     size="large"
-                                    href="/contact"
+                                    href="tel:+4793220988" // 🔹 Direkte ringe-link
                                     endIcon={<ArrowForwardIcon />}
                                     sx={{
                                         borderRadius: 2,
@@ -182,7 +182,7 @@ function CtaSection() {
                                         transition: "all .25s ease",
                                     }}
                                 >
-                                    Bestill befaring
+                                    Gratis befaring
                                 </Button>
 
                                 <Button

@@ -33,14 +33,14 @@ const contactPersons = [
         role: "Daglig leder / Prosjekt",
         email: "rhb@rogalandhageogbyggservice.no",
         phone: "+47 93 22 09 88",
-        photoUrl: "/src/assets/workerOne.png",
+        photoUrl: "/src/assets/workers/aleksander.jpg",
     },
     {
-        name: "Olav Sand",
+        name: "Àlēx Mäldé",
         role: "Drift & kundekontakt",
         email: "rhb@rogalandhageogbyggservice.no",
         phone: "+47 93 22 09 88",
-        photoUrl: "/src/assets/workerTwo.png",
+        photoUrl: "/src/assets/workers/alex.jpg",
     },
 ];
 

@@ -22,15 +22,12 @@ import HandymanIcon from "@mui/icons-material/Handyman";
 import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
 
 // 🖼️ Premium: bakgrunnsbilder for hvert kort (bytt til dine egne filer)
-import imgPlen from "../../assets/gartner-working-two.png";
-import imgHekk from "../../assets/gartner-working-two.png";
-import imgTre from "../../assets/gartner-working-two.png";
-import imgSesong from "../../assets/gartner-working-two.png";
-import imgTakrenner from "../../assets/gartner-working-two.png";
-import imgTerrasse from "../../assets/gartner-working-two.png";
-import imgVaktmester from "../../assets/gartner-working-two.png";
-import imgBefaring from "../../assets/gartner-working-two.png";
-import imgFaktura from "../../assets/gartner-working-two.png";
+import imgPlen from "../../assets/privateImages/uteområde-formklippet.jpg";
+import imgHekk from "../../assets/privateImages/innvendig-kjøkken.jpg";
+import imgSesong from "../../assets/privateImages/uteområde-trapp.jpg";
+import imgTakrenner from "../../assets/privateImages/innvendig-soverom.jpg";
+import imgTerrasse from "../../assets/privateImages/utvendig-hage.jpg";
+import imgVaktmester from "../../assets/privateImages/uteområde-terrase.jpg";
 
 // Innhold (gartner/bygg)
 const features = [
@@ -153,7 +150,7 @@ export default function FeaturesSection() {
                                         overflow: "hidden",
                                         height: 280,
 
-                                        // Bakgrunnsbilde
+                                        // Background image
                                         "&::before": {
                                             content: '""',
                                             position: "absolute",
@@ -167,7 +164,16 @@ export default function FeaturesSection() {
                                             pointerEvents: "none",
                                         },
 
-                                        // Fjernet &::after (mørk film)
+                                        // 🔥 NEW gradient shadow overlay
+                                        "&::after": {
+                                            content: '""',
+                                            position: "absolute",
+                                            inset: 0,
+                                            background:
+                                                "linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0) 75%)",
+                                            zIndex: 1,
+                                            pointerEvents: "none",
+                                        },
 
                                         border: `1px solid ${theme.palette.common.white}1A`,
                                         boxShadow:
