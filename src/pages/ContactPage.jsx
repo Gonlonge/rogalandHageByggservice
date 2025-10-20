@@ -6,7 +6,7 @@ import ContactForm from "../components/contact/ContactForm";
 function ContactPage() {
     useEffect(() => {
         // Update page title
-        document.title = "Kontakt oss | Rogaland Hage & Byggeservice";
+        document.title = "Kontakt oss | Driftli AS";
     }, []);
 
     return (

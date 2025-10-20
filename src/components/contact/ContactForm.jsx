@@ -458,23 +458,24 @@ import aleksanderPhoto from "../../assets/workers/aleksander.jpg";
 import alexPhoto from "../../assets/workers/alex.jpg";
 
 const inquiryTypes = [
-    { value: "general", label: "Generell forespørsel" },
+    { value: "Generell forespørsel", label: "Generell forespørsel" },
     { value: "befaring", label: "Ønsker befaring" },
-    { value: "pricing", label: "Pris/tilbud" },
+    { value: "Bli medlem", label: "Bli medlem" },
+    { value: "Pris/tilbud", label: "Pris/tilbud" },
 ];
 
 const contactPersons = [
     {
         name: "Alexander Håland",
         role: "Daglig leder / Prosjekt",
-        email: "rhb@rogalandhageogbyggservice.no",
+        email: "post@driftli.no",
         phone: "+47 93 22 09 88",
         photoUrl: aleksanderPhoto,
     },
     {
         name: "Àlēx Mäldé",
         role: "Drift & kundekontakt",
-        email: "rhb@rogalandhageogbyggservice.no",
+        email: "post@driftli.no",
         phone: "+47 93 22 09 88",
         photoUrl: alexPhoto,
     },
@@ -598,21 +599,22 @@ function ContactForm() {
                                 component="h1"
                                 sx={{ fontWeight: 700, mb: 1 }}
                             >
-                                Kontakt Rogaland Hage & Byggeservice
+                                Kontakt Driftli AS
                             </Typography>
 
                             <Typography
                                 variant="body1"
                                 sx={{
                                     mb: 4,
-                                    color: theme.palette.text.secondary,
+                                    color: theme.palette.text.secoprindary,
                                     maxWidth: 480,
                                 }}
                             >
                                 Vi hjelper borettslag, bedrifter og private i
-                                Rogaland med plen, hekk, trefelling,
-                                sesongrydding og små bygg/vedlikehold. Kontakt
-                                oss direkte eller bruk skjemaet ved siden av
+                                Rogaland med alt innen drift og vedlikehold fra
+                                tømrer, elektriker og rørlegger til renhold,
+                                fasadevask og gartnerarbeid. Ta kontakt for et
+                                fast og forutsigbart samarbeid
                             </Typography>
 
                             <Stack spacing={4}>
@@ -657,6 +659,12 @@ function ContactForm() {
                                                     sx={{
                                                         display: "flex",
                                                         alignItems: "center",
+                                                        color: "inherit", // 🔹 behold tekstfarge fra parent
+                                                        textDecorationColor:
+                                                            "rgba(0,0,0,0.3)", // diskret strek ved hover
+                                                        "&:hover": {
+                                                            color: "inherit",
+                                                        }, // 🔹 ingen blåfarge ved hover
                                                     }}
                                                 >
                                                     <EmailIcon
@@ -667,6 +675,7 @@ function ContactForm() {
                                                     />
                                                     {p.email}
                                                 </MuiLink>
+
                                                 <MuiLink
                                                     href={`tel:${p.phone.replace(
                                                         /\s+/g,
@@ -677,6 +686,12 @@ function ContactForm() {
                                                     sx={{
                                                         display: "flex",
                                                         alignItems: "center",
+                                                        color: "inherit", // 🔹 samme som over
+                                                        textDecorationColor:
+                                                            "rgba(0,0,0,0.3)",
+                                                        "&:hover": {
+                                                            color: "inherit",
+                                                        },
                                                     }}
                                                 >
                                                     <PhoneIcon

@@ -11,15 +11,15 @@ import {
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 
-// Fjern de gamle ikon-importene og bruk disse:
-import GrassIcon from "@mui/icons-material/Grass";
-import ContentCutIcon from "@mui/icons-material/ContentCut";
-import ForestIcon from "@mui/icons-material/Forest";
-import CleaningServicesIcon from "@mui/icons-material/CleaningServices";
+// ✅ Oppdaterte ikon-importer
+import BuildIcon from "@mui/icons-material/Build";
+import BoltIcon from "@mui/icons-material/Bolt";
+import PlumbingIcon from "@mui/icons-material/Plumbing";
+import CarRepairIcon from "@mui/icons-material/CarRepair";
 import RoofingIcon from "@mui/icons-material/Roofing";
-import DeckIcon from "@mui/icons-material/Deck";
+import YardIcon from "@mui/icons-material/Yard";
+import CleaningServicesIcon from "@mui/icons-material/CleaningServices";
 import HandymanIcon from "@mui/icons-material/Handyman";
-import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
 
 // 🖼️ Premium: bakgrunnsbilder for hvert kort (bytt til dine egne filer)
 import imgPlen from "../../assets/privateImages/uteområde-formklippet.jpg";
@@ -29,54 +29,67 @@ import imgTakrenner from "../../assets/privateImages/innvendig-soverom.jpg";
 import imgTerrasse from "../../assets/privateImages/utvendig-hage.jpg";
 import imgVaktmester from "../../assets/privateImages/uteområde-terrase.jpg";
 
-// Innhold (gartner/bygg)
+// 🧩 Tjenesteliste
 const features = [
     {
-        title: "Plenklipp & kanting",
-        icon: <GrassIcon />,
+        title: "Tømrertjenester",
+        icon: <BuildIcon />,
         description:
-            "Fast intervall, jevn høyde og rene kanter – for en plen som alltid ser nyklipt ut.",
+            "Presist arbeid, solide materialer og varige løsninger for et resultat som både ser bra ut og holder over tid.",
         image: imgPlen,
     },
     {
-        title: "Hekkeklipp & buskform",
-        icon: <ContentCutIcon />,
+        title: "Elektrikerarbeid",
+        icon: <BoltIcon />,
         description:
-            "Presis formklipp, riktig tidspunkt og ryddig bortkjøring av hageavfall.",
+            "Sikre installasjoner, energieffektive løsninger og fagmessig utført arbeid – for et trygt og moderne hjem.",
         image: imgHekk,
     },
-
     {
-        title: "Rydding & sesongarbeid",
-        icon: <CleaningServicesIcon />,
+        title: "Rørleggertjenester",
+        icon: <PlumbingIcon />,
         description:
-            "Vår- og høstklargjøring, løvblåsing, ugress og helhetsrydding – klart til bruk.",
+            "Installasjon, vedlikehold og reparasjon av rør, kraner og sanitæranlegg – utført trygt og profesjonelt.",
         image: imgSesong,
     },
     {
-        title: "Takrenner & fasadevask",
-        icon: <RoofingIcon />,
+        title: "Bilmekaniker",
+        icon: <CarRepairIcon />,
         description:
-            "Rens av renner, vask av fasader/heller og forebyggende vedlikehold.",
+            "Service, reparasjon og vedlikehold av bilen – for trygg, effektiv og problemfri kjøring året rundt.",
         image: imgTakrenner,
     },
     {
-        title: "Terrasse & småbygg",
-        icon: <DeckIcon />,
+        title: "Blikkenslager",
+        icon: <RoofingIcon />,
         description:
-            "Ny terrasse, levegger og små reparasjoner – solid, rett og pent.",
+            "Montering og vedlikehold av tak, beslag og fasadedetaljer – for et tett, varig og profesjonelt resultat.",
         image: imgTerrasse,
     },
     {
-        title: "Vaktmester & faste avtaler",
+        title: "Gartner",
+        icon: <YardIcon />,
+        description:
+            "Plenklipp, beskjæring, ugressfjerning og sesongrydding – for en velstelt og innbydende hage hele året.",
+        image: imgVaktmester,
+    },
+    {
+        title: "Fasade & takvask",
+        icon: <CleaningServicesIcon />,
+        description:
+            "Grundig vask av tak, fasader og utvendige flater – for et rent, trygt og velholdt bygg hele året.",
+        image: imgVaktmester,
+    },
+    {
+        title: "Renhold",
         icon: <HandymanIcon />,
         description:
-            "Fast tilsyn og årshjul for borettslag, sameier og bedrifter – én partner.",
+            "Effektivt og grundig renhold av både private og næringsbygg – for et rent, ryddig og trivelig miljø hver dag.",
         image: imgVaktmester,
     },
 ];
 
-// slugify for ruter
+// Slugify for ruter
 const slugify = (text) =>
     text
         .toLowerCase()
@@ -88,7 +101,7 @@ export default function FeaturesSection() {
     const navigate = useNavigate();
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
-    // Hjelper for fallback hvis bilde mangler
+    // Fallback-bakgrunn
     const bgFor = (img) =>
         img
             ? `url(${img})`
@@ -119,7 +132,7 @@ export default function FeaturesSection() {
                         component="h2"
                         sx={{ fontWeight: 800, mb: 2 }}
                     >
-                        Hagepleie & byggservice
+                        Medlemsfordeler for private og bedrifter
                     </Typography>
                     <Typography
                         variant="h6"
@@ -131,11 +144,11 @@ export default function FeaturesSection() {
                         }}
                     >
                         Høy kvalitet, ryddig gjennomføring og dokumentert
-                        resultat med god plass til fleksible avtaler
+                        resultat – med fleksible avtaler og trygge leverandører.
                     </Typography>
                 </Box>
 
-                {/* 2-kolonne premium kort */}
+                {/* Kortvisning */}
                 <Grid container spacing={4} ref={ref}>
                     {features.map((f, i) => {
                         const delay = 0.05 + i * 0.05;
@@ -149,8 +162,6 @@ export default function FeaturesSection() {
                                         borderRadius: 4,
                                         overflow: "hidden",
                                         height: 280,
-
-                                        // Background image
                                         "&::before": {
                                             content: '""',
                                             position: "absolute",
@@ -163,8 +174,6 @@ export default function FeaturesSection() {
                                             zIndex: 0,
                                             pointerEvents: "none",
                                         },
-
-                                        // 🔥 NEW gradient shadow overlay
                                         "&::after": {
                                             content: '""',
                                             position: "absolute",
@@ -174,7 +183,6 @@ export default function FeaturesSection() {
                                             zIndex: 1,
                                             pointerEvents: "none",
                                         },
-
                                         border: `1px solid ${theme.palette.common.white}1A`,
                                         boxShadow:
                                             theme.palette.mode === "light"
@@ -208,7 +216,7 @@ export default function FeaturesSection() {
                                             position: "relative",
                                             height: "100%",
                                             pointerEvents: "auto",
-                                            zIndex: 2, // ← hele klikkflaten ligger over skyggen
+                                            zIndex: 2,
                                         }}
                                     >
                                         <CardContent
@@ -219,10 +227,10 @@ export default function FeaturesSection() {
                                                 bottom: 0,
                                                 p: { xs: 2.5, sm: 3 },
                                                 color: "#fff",
-                                                zIndex: 3, // tekst/ikon over bildet
+                                                zIndex: 3,
                                             }}
                                         >
-                                            {/* Ikonbadge + tekst */}
+                                            {/* Ikon */}
                                             <Box
                                                 sx={{
                                                     width: 56,
@@ -233,7 +241,6 @@ export default function FeaturesSection() {
                                                     mb: 1.5,
                                                     color: theme.palette.primary
                                                         .main,
-
                                                     border: `2px solid ${theme.palette.primary.main}33`,
                                                     boxShadow:
                                                         "0 6px 16px rgba(0,0,0,0.25)",
@@ -270,7 +277,7 @@ export default function FeaturesSection() {
                                                     alignItems: "center",
                                                 }}
                                             >
-                                                Les mer{" "}
+                                                {/* Les mer{" "} */}
                                                 <Box
                                                     component="span"
                                                     aria-hidden
@@ -280,7 +287,7 @@ export default function FeaturesSection() {
                                                             "translateY(1px)",
                                                     }}
                                                 >
-                                                    →
+                                                    {/* → */}
                                                 </Box>
                                             </Box>
                                         </CardContent>

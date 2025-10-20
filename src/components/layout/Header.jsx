@@ -13,6 +13,7 @@ import {
     Drawer,
     Stack,
     Divider,
+    useScrollTrigger,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -20,8 +21,8 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
 
 // ✅ Logos
-import logoBlack from "../../assets/logo-black.jpeg";
-import logoWhite from "../../assets/logo-white.jpeg";
+import logoBlack from "../../assets/logo-black.png";
+import logoWhite from "../../assets/logo-white.png";
 
 function Header({ scrolled }) {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -46,6 +47,11 @@ function Header({ scrolled }) {
     const isHome = location.pathname === "/";
     const textColor = isHome ? "#fff" : "#000";
 
+    // ⬇️ NYTT: trigge blur mye tidligere (8px)
+    const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 8 });
+    const isBlurred =
+        typeof scrolled === "boolean" ? scrolled || trigger : trigger;
+
     const handleNavigate = (path) => {
         navigate(path);
         setMobileOpen(false);
@@ -57,19 +63,20 @@ function Header({ scrolled }) {
                 position="fixed"
                 elevation={0}
                 sx={{
-                    backgroundColor: scrolled
+                    backgroundColor: isBlurred
                         ? isHome
                             ? "rgba(0,0,0,0.15)"
                             : "rgba(255,255,255,0.15)"
                         : "transparent",
-                    backdropFilter: scrolled ? "blur(8px)" : "none",
-                    WebkitBackdropFilter: scrolled ? "blur(8px)" : "none",
+                    backdropFilter: isBlurred ? "blur(8px)" : "none",
+                    WebkitBackdropFilter: isBlurred ? "blur(8px)" : "none",
                     transition:
                         "background-color 0.3s ease, backdrop-filter 0.3s ease",
-                    boxShadow: scrolled
+                    boxShadow: isBlurred
                         ? "0px 2px 10px rgba(0,0,0,0.05)"
                         : "none",
                     color: textColor,
+                    borderBottom: "none",
                 }}
             >
                 <Container maxWidth="xl">
@@ -116,7 +123,7 @@ function Header({ scrolled }) {
                                 component="img"
                                 src={isHome ? logoWhite : logoBlack}
                                 alt="Logo"
-                                sx={{ height: 44, width: "auto" }}
+                                sx={{ height: 80, width: "auto" }}
                             />
                         </Box>
 
@@ -189,7 +196,7 @@ function Header({ scrolled }) {
                     sx: {
                         width: "100%",
                         height: "100%",
-                        backgroundColor: "rgba(0,0,0,0.6)", // 🔹 more transparent
+                        backgroundColor: "rgba(0,0,0,0.6)",
                         backdropFilter: "blur(6px)",
                         color: "#fff",
                     },
@@ -270,7 +277,7 @@ function Header({ scrolled }) {
 
                 <Box sx={{ flexGrow: 1 }} />
                 <Box sx={{ px: 2, py: 2, opacity: 0.7, fontSize: 12 }}>
-                    © {new Date().getFullYear()} Rogaland Hage & Byggeservice
+                    © {new Date().getFullYear()} Driftli AS
                 </Box>
             </Drawer>
         </>

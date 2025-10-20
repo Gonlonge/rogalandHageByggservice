@@ -10,24 +10,21 @@ import {
     Button,
     Divider,
     useTheme,
+    alpha,
 } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
-// ⚙️ Tilpass enkelt her
 const COMPANY = {
-    name: "Rogaland Hage & Byggeservice",
-    slogan: "Pålitelig hjelp til hage, vedlikehold og mindre byggoppdrag i Stavanger og Sandnes.",
-    email: "rhb@rogalandhageogbyggservice.no",
+    name: "Driftli AS",
+    slogan: "Profesjonelle fordeler for bygg, bil og fritid.",
+    email: "post@driftli.no",
     phone: "+47 93 22 09 88",
-    address: "Stavanger & Sandnes", // ← bytt evt.
-    org: "Org.nr: 000 000 000", // ← bytt/ta bort
-    facebook: "#", // ← lenke eller fjern
-    linkedin: "#", // ← lenke eller fjern
+    address: "Stavanger & Sandnes",
+    org: "Org.nr: 936 366 821",
+    facebook: "#",
+    linkedin: "#",
 };
-
-// ️🔧 Bytt til din logofil (hvit variant anbefales)
-// import logoWhite from "../../assets/rhb-logo-white.svg";
 
 export default function Footer() {
     const theme = useTheme();
@@ -36,12 +33,19 @@ export default function Footer() {
     return (
         <Box
             component="footer"
-            sx={{ bgcolor: "#0b3d2e", color: "#fff", mt: "auto" }}
+            sx={{
+                bgcolor: theme.palette.primary.dark,
+                color: theme.palette.common.white,
+                mt: "auto",
+            }}
         >
             {/* TOP STRIPE */}
             <Box
                 sx={{
-                    borderBottom: "1px solid rgba(255,255,255,0.12)",
+                    borderBottom: `1px solid ${alpha(
+                        theme.palette.common.white,
+                        0.12
+                    )}`,
                     py: { xs: 4, md: 5 },
                 }}
             >
@@ -49,10 +53,12 @@ export default function Footer() {
                     <Grid container spacing={4} alignItems="center">
                         <Grid item xs={12} md={7}>
                             <Stack spacing={1.2}>
-                                {/* <Box component="img" src={logoWhite} alt={COMPANY.name} sx={{ height: 44, width: "auto" }} /> */}
                                 <Typography
                                     variant="h5"
-                                    sx={{ fontWeight: 700, letterSpacing: 0.2 }}
+                                    sx={{
+                                        fontWeight: 700,
+                                        letterSpacing: 0.2,
+                                    }}
                                 >
                                     {COMPANY.name}
                                 </Typography>
@@ -68,25 +74,53 @@ export default function Footer() {
                                 </Typography>
                             </Stack>
                         </Grid>
+
                         <Grid item xs={12} md={5}>
                             <Stack
                                 direction={{ xs: "column", sm: "row" }}
                                 spacing={2}
                                 justifyContent={{ md: "flex-end" }}
                             >
+                                {/* Gull-gradient knapp */}
                                 <Button
                                     variant="contained"
-                                    color="success"
+                                    color="secondary"
                                     size="large"
                                     href="tel:+4793220988"
                                     sx={{
-                                        bgcolor: "#1f8a52",
-                                        ":hover": { bgcolor: "#187246" },
-                                        fontWeight: 700,
                                         borderRadius: 2,
+                                        px: 3,
+                                        py: 1.3,
+                                        fontWeight: 800,
+                                        textTransform: "none",
+                                        color: theme.palette.secondary
+                                            .contrastText,
+                                        backgroundColor:
+                                            theme.palette.secondary.main,
+                                        backgroundImage: `linear-gradient(90deg, ${theme.palette.secondary.light}, ${theme.palette.secondary.main} 60%, ${theme.palette.secondary.dark})`,
+                                        boxShadow: `0 8px 20px ${alpha(
+                                            theme.palette.secondary.dark,
+                                            0.35
+                                        )}`,
+                                        "&:hover": {
+                                            transform: "translateY(-1px)",
+                                            backgroundImage: `linear-gradient(90deg, ${
+                                                theme.palette.secondary.light
+                                            }, ${
+                                                theme.palette.secondary.dark
+                                            } 60%, ${alpha(
+                                                theme.palette.secondary.dark,
+                                                0.9
+                                            )})`,
+                                            boxShadow: `0 12px 26px ${alpha(
+                                                theme.palette.secondary.dark,
+                                                0.5
+                                            )}`,
+                                        },
+                                        transition: "all .25s ease",
                                     }}
                                 >
-                                    Gratis befaring
+                                    Kontakt oss
                                 </Button>
 
                                 <Button
@@ -95,9 +129,24 @@ export default function Footer() {
                                     size="large"
                                     href="/about"
                                     sx={{
-                                        borderColor: "rgba(255,255,255,0.6)",
-                                        color: "#fff",
                                         borderRadius: 2,
+                                        px: 3,
+                                        py: 1.3,
+                                        fontWeight: 700,
+                                        textTransform: "none",
+                                        borderColor: alpha(
+                                            theme.palette.common.white,
+                                            0.6
+                                        ),
+                                        color: theme.palette.common.white,
+                                        "&:hover": {
+                                            borderColor:
+                                                theme.palette.common.white,
+                                            backgroundColor: alpha(
+                                                theme.palette.common.white,
+                                                0.1
+                                            ),
+                                        },
                                     }}
                                 >
                                     Les mer
@@ -120,28 +169,28 @@ export default function Footer() {
                             Tjenester
                         </Typography>
                         <Stack spacing={1}>
-                            <Typography variant="body2" sx={{ opacity: 0.9 }}>
-                                Plenklipp & kantklipp
-                            </Typography>
-                            <Typography variant="body2" sx={{ opacity: 0.9 }}>
-                                Hekk-klipp & beskjæring
-                            </Typography>
-                            <Typography variant="body2" sx={{ opacity: 0.9 }}>
-                                Trefelling & stubbefres
-                            </Typography>
-                            <Typography variant="body2" sx={{ opacity: 0.9 }}>
-                                Sesongrydding (vår/høst)
-                            </Typography>
-                            <Typography variant="body2" sx={{ opacity: 0.9 }}>
-                                Rens av takrenner
-                            </Typography>
-                            <Typography variant="body2" sx={{ opacity: 0.9 }}>
-                                Mindre bygg & vedlikehold
-                            </Typography>
+                            {[
+                                "Tømrertjenester",
+                                "Elektriker",
+                                "Rørlegger",
+                                "Bilmekaniker",
+                                "Blikkenslager",
+                                "Fasade og takvask",
+                                "Renhold",
+                                "Gartner",
+                            ].map((service) => (
+                                <Typography
+                                    key={service}
+                                    variant="body2"
+                                    sx={{ opacity: 0.9 }}
+                                >
+                                    {service}
+                                </Typography>
+                            ))}
                         </Stack>
                     </Grid>
 
-                    {/* Selskap */}
+                    {/* Selskapet */}
                     <Grid item xs={12} sm={6} md={3}>
                         <Typography
                             variant="subtitle1"
@@ -158,22 +207,6 @@ export default function Footer() {
                             >
                                 Kontakt oss
                             </MUILink>
-                            {/* <MUILink
-                                href="/referanser"
-                                underline="hover"
-                                color="inherit"
-                                sx={{ opacity: 0.9 }}
-                            >
-                                Referanser
-                            </MUILink>
-                            <MUILink
-                                href="/priser"
-                                underline="hover"
-                                color="inherit"
-                                sx={{ opacity: 0.9 }}
-                            >
-                                Priser
-                            </MUILink> */}
                             <MUILink
                                 href="/about"
                                 underline="hover"
@@ -221,7 +254,7 @@ export default function Footer() {
                                 color="inherit"
                                 sx={{ opacity: 0.95 }}
                             >
-                                E‑post: {COMPANY.email}
+                                E-post: {COMPANY.email}
                             </MUILink>
                             <Stack direction="row" spacing={1} sx={{ pt: 0.5 }}>
                                 {COMPANY.facebook &&
@@ -285,7 +318,7 @@ export default function Footer() {
 
                 <Divider
                     sx={{
-                        borderColor: "rgba(255,255,255,0.12)",
+                        borderColor: alpha(theme.palette.common.white, 0.12),
                         my: { xs: 4, md: 6 },
                     }}
                 />
@@ -300,35 +333,6 @@ export default function Footer() {
                     <Typography variant="body2" sx={{ opacity: 0.75 }}>
                         © {year} {COMPANY.name}. Alle rettigheter reservert
                     </Typography>
-                    {/* <Stack
-                        direction={{ xs: "column", sm: "row" }}
-                        spacing={{ xs: 1, sm: 3 }}
-                    >
-                        <MUILink
-                            href="/personvern"
-                            underline="hover"
-                            color="inherit"
-                            sx={{ opacity: 0.85 }}
-                        >
-                            Personvern
-                        </MUILink>
-                        <MUILink
-                            href="/vilkar"
-                            underline="hover"
-                            color="inherit"
-                            sx={{ opacity: 0.85 }}
-                        >
-                            Vilkår
-                        </MUILink>
-                        <MUILink
-                            href="/cookies"
-                            underline="hover"
-                            color="inherit"
-                            sx={{ opacity: 0.85 }}
-                        >
-                            Informasjonskapsler
-                        </MUILink>
-                    </Stack> */}
                 </Stack>
             </Container>
         </Box>

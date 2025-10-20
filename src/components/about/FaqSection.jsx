@@ -18,60 +18,60 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 
 const faqItems = [
     {
-        question: "Tilbyr dere gratis befaring?",
-        answer: "Ja. Vi tilbyr gratis og uforpliktende befaring i Stavanger- og Sandnes-området (og nærliggende kommuner etter avtale). Vi går gjennom behov, avklarer omfang og gir fastpris der det er mulig.",
+        question: "Hva er Driftli egentlig?",
+        answer: "Driftli samler kvalitetssikrede fagfolk og tjenester i ett system. Som medlem får du tilgang til forhandlede priser på tømrer, elektriker, rørlegger, renhold, bilverksted, gartner og mer uten tidkrevende tilbudsrunder.",
+    },
+    {
+        question: "Hvordan fungerer medlemskapet?",
+        answer: "Du tegner et vedlikeholdsabonnement der Driftli håndterer koordinering, avtaler og oppfølging for deg. Du får tilgang til faste leverandører, forutsigbare priser og månedlig oversikt over alt arbeid som utføres.",
+    },
+    {
+        question: "Hvem kan bruke Driftli?",
+        answer: "Privatpersoner, borettslag, sameier, bedrifter og eiendomsforvaltere. Tjenesten passer for alle som vil ha én ryddig løsning for drift og vedlikehold i stedet for å håndtere mange ulike leverandører selv.",
+    },
+    {
+        question: "Hva koster det å bruke Driftli?",
+        answer: "Selve medlemstjenesten koster ingenting. Du betaler kun for utført arbeid eller avtalt vedlikehold. Driftli forhandler ned prisene på vegne av medlemmene slik at du får tilgang til profesjonelle betingelser.",
+    },
+    {
+        question: "Kan jeg velge mine egne leverandører?",
+        answer: "Du kan bruke egne leverandører, men Driftli anbefaler våre godkjente partnere. De er forhåndskvalifisert på pris, forsikring, HMS og service. Dette gir trygghet, bedre oppfølging og garantier gjennom oss.",
+    },
+    {
+        question: "Er fagfolkene forsikret og godkjent?",
+        answer: "Ja. Alle leverandører i Driftli-nettverket har dokumentert fagbrev, ansvarsforsikring og HMS-system. Vi godkjenner ikke aktører uten gyldig dokumentasjon.",
+    },
+    {
+        question: "Hvordan inngår jeg en vedlikeholdsavtale?",
+        answer: "Etter en gratis behovskartlegging setter vi opp en plan som passer deg, månedlig, sesongbasert eller årlig. Du får fast pris og tydelig oversikt over hva som inngår.",
+    },
+    {
+        question: "Kan jeg bruke Driftli kun ved behov?",
+        answer: "Ja. Du kan bestille enkeltoppdrag uten å ha fast avtale. Men de fleste velger medlemskap for å få rabatter, prioritet og enklere håndtering av flere fag samtidig.",
     },
     {
         question: "Hvilke områder dekker dere?",
-        answer: "Primært Stavanger, Sandnes, Sola og Randaberg. Vi kan også ta oppdrag i resten av Rogaland etter avtale, særlig ved større jobber eller sesongavtaler.",
+        answer: "Driftli samarbeider med leverandører i hele Rogaland. Tjenesten utvides fortløpende til andre regioner. Ta kontakt dersom du ønsker å benytte tjenesten utenfor området.",
     },
     {
-        question: "Hvilke tjenester leverer dere?",
-        answer: "Plenklipp og kantklipp, hekk-klipp og beskjæring, trefelling og stubbefresing, sesongrydding (vår/høst), rens av takrenner, samt mindre bygg- og vedlikeholdsjobber som levegger og terrassearbeid.",
+        question: "Hvordan betaler jeg for tjenester?",
+        answer: "Privatkunder får faktura eller Vipps. Bedrifter og sameier får EHF-faktura og månedlig oversikt over alt arbeid. Alle priser er faste og avtalt på forhånd.",
     },
     {
-        question: "Hvordan prises jobben – timepris eller fastpris?",
-        answer: "Vi gir fastpris etter befaring på tydelig avgrensede jobber (f.eks. hekk-klipp, rens av takrenner, stubbefresing). Løpende vedlikehold (f.eks. ukentlig plenklipp) kan prises som fast månedspris eller timepris etter avtale.",
+        question: "Har Driftli garanti på arbeid?",
+        answer: "Ja. Vi tilbyr fornøydgaranti gjennom våre partnerbedrifter. Eventuelle feil eller mangler blir rettet kostnadsfritt innen rimelig tid.",
     },
     {
-        question: "Hva med bortkjøring av hageavfall?",
-        answer: "Vi kan ta med og levere hageavfall mot et tillegg som dekker transport og mottaksgebyr. Vil du spare kostnaden, kan vi stable avfallet på anvist plass hos deg.",
+        question: "Kan jeg si opp avtalen når som helst?",
+        answer: "Ja. Du kan avslutte når som helst med 30 dagers oppsigelse. Ingen bindingstid eller skjulte gebyrer.",
     },
     {
-        question: "Er dere forsikret – og hvordan jobber dere med HMS?",
-        answer: "Ja. Vi har gyldig ansvarsforsikring og følger sikre arbeidsrutiner. Ved trefelling vurderer vi fallretning, sperrer av området og bruker riktig verneutstyr og sikring.",
+        question: "Hvordan blir jeg leverandør i Driftli?",
+        answer: "Leverandører som ønsker å samarbeide med oss kan kontakte oss direkte via kontaktskjemaet på nettsiden. Vi vurderer fagområde, referanser, HMS og kapasitet før godkjenning.",
     },
     {
-        question: "Trenger jeg tillatelse til trefelling?",
-        answer: "På egen tomt er det som regel greit, men sjekk alltid regulering, naboavtaler og evt. vernebestemmelser. I borettslag/sameie må styret godkjenne. Vi veileder deg gjerne.",
-    },
-    {
-        question: "Når kommer dere – og hva om det regner?",
-        answer: "Vi avtaler tidsvindu for oppmøte. Lett regn stopper sjelden oss. Ved kraftig regn eller vind som påvirker kvalitet/sikkerhet, ombooker vi i dialog med deg.",
-    },
-    {
-        question: "Hvordan fungerer sesong- og helårsavtaler?",
-        answer: "Vi setter opp en plan med hyppighet (f.eks. ukentlig/annenhver uke plenklipp, vår- og høstrydding, hekk-klipp etter sesong). Fast månedlig pris gir forutsigbarhet.",
-    },
-    {
-        question: "Kan dere jobbe når jeg ikke er hjemme?",
-        answer: "Ja. Mange kunder gir oss tilgang via lås/portkode eller nøkkelboks. Vi avtaler løsning som er trygg og ryddig for begge parter.",
-    },
-    {
-        question: "Hvilke betalingsmåter tilbyr dere?",
-        answer: "Faktura (privat og bedrift), EHF for virksomheter. Vipps aksepteres på mindre jobber. For større prosjekt kan delbetaling avtales.",
-    },
-    {
-        question: "Har dere garanti på arbeid?",
-        answer: "Vi har fornøyd-garanti. Oppdager du noe, sier du fra innen 3 dager, så retter vi opp uten ekstra kostnad.",
-    },
-    {
-        question: "Kan jeg avbestille eller flytte timen?",
-        answer: "Ja. Gi beskjed senest 24 timer før avtalt tid for kostnadsfri ombooking/avbestilling. Ved senere avbestilling kan gebyr tilkomme for tapt tid.",
-    },
-    {
-        question: "Tar dere bilder før/etter?",
-        answer: "Kun med samtykke. Noen kunder ønsker dokumentasjon, andre ikke. Vi respekterer ditt valg – og publiserer ingenting uten godkjenning.",
+        question: "Hvordan kontakter jeg kundeservice?",
+        answer: "Du kan kontakte oss via nettsiden, e-post eller telefon. Vi svarer vanligvis innen 24 timer på hverdager og har utvidet support for bedriftskunder.",
     },
 ];
 
@@ -88,7 +88,7 @@ function FaqSection() {
         return (
             <Paper
                 elevation={0}
-                onClick={() => toggleOne(index)} // ✅ hele kortet klikker
+                onClick={() => toggleOne(index)}
                 sx={{
                     p: 2.5,
                     borderRadius: 3,
@@ -119,7 +119,7 @@ function FaqSection() {
                         size="small"
                         edge="end"
                         disableRipple
-                        sx={{ pointerEvents: "none" }} // ✅ ikon følger bare status, klikk deaktiveres
+                        sx={{ pointerEvents: "none" }}
                     >
                         {isOpen ? <RemoveIcon /> : <AddIcon />}
                     </IconButton>
@@ -146,11 +146,10 @@ function FaqSection() {
             }}
         >
             <Container maxWidth="lg" sx={{ px: { xs: 3, sm: 4 } }}>
-                {/* Header */}
                 <Box sx={{ textAlign: "center", mb: 5 }}>
                     <Chip
                         icon={<HelpOutlineIcon />}
-                        label="Vanlige spørsmål – Rogaland Hage & Byggeservice"
+                        label="Vanlige spørsmål Driftli"
                         sx={{
                             mb: 2,
                             fontWeight: 600,
@@ -165,7 +164,7 @@ function FaqSection() {
                         component="h2"
                         sx={{ fontWeight: 800, letterSpacing: "-0.3px", mb: 1 }}
                     >
-                        Alt om hage, vedlikehold og avtaler
+                        Alt om medlemskap, tjenester og fordeler
                     </Typography>
                     <Typography
                         variant="h6"
@@ -176,12 +175,11 @@ function FaqSection() {
                             fontWeight: 400,
                         }}
                     >
-                        Her finner du svar på det meste. Finner du ikke svaret
-                        ta kontakt, så hjelper vi deg raskt
+                        Her finner du svar på hvordan Driftli fungerer, hva som
+                        er inkludert og hvordan du får mest ut av medlemskapet
                     </Typography>
                 </Box>
 
-                {/* FAQ – to kolonner på md+ */}
                 <Grid container spacing={2}>
                     {faqItems.map((item, idx) => (
                         <Grid item xs={12} md={6} key={idx}>

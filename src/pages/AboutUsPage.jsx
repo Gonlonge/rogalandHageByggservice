@@ -7,7 +7,7 @@ import CtaSection from "../components/home/CtaSection";
 function AboutUsPage() {
     useEffect(() => {
         // Update page title
-        document.title = "Om oss | Rogaland Hage & Byggeservice";
+        document.title = "Om oss | Driftli AS";
     }, []);
 
     return (

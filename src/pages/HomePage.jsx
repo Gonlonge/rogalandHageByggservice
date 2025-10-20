@@ -7,7 +7,7 @@ import CtaSection from "../components/home/CtaSection";
 
 function HomePage() {
     useEffect(() => {
-        document.title = "Rogaland Hage & Byggeservice";
+        document.title = "Driftli AS";
     }, []);
 
     return (

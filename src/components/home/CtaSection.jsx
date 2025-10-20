@@ -7,26 +7,25 @@ import {
     Stack,
     useTheme,
 } from "@mui/material";
+import { alpha } from "@mui/material/styles";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { useInView } from "react-intersection-observer";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-// Bytt gjerne til ditt gartner-bilde
 import gartnerWorking from "../../assets/privateImages/utvendig-hage.jpg";
-// Fallback hvis ikke finnes lokalt
 import houseGardenTwo from "../../assets/house-garden-two.png";
 
 const benefits = [
-    "Rask befaring – vanligvis innen 24t*",
-    "Fastpris/avtale uten overraskelser",
+    "Rask besvarelse – vanligvis innen 24t*",
+    "Smarte avtaler. Klare priser. Ferdig forhandlet.",
     "Forsikret, ryddig og HMS-dokumentert arbeid",
-    "Fast vedlikeholdsplan gjennom året",
+    "Vi samarbeider kun med verifiserte aktører",
 ];
 
 function CtaSection() {
     const theme = useTheme();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
     const ctaImage = gartnerWorking || houseGardenTwo;
@@ -36,8 +35,8 @@ function CtaSection() {
             ref={ref}
             sx={{
                 py: { xs: 8, md: 10 },
-                background: `linear-gradient(135deg, ${theme.palette.success.dark} 0%, ${theme.palette.success.main} 100%)`,
-                color: "white",
+                background: `linear-gradient(135deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.main} 100%)`,
+                color: theme.palette.common.white,
                 position: "relative",
                 overflow: "hidden",
             }}
@@ -52,8 +51,10 @@ function CtaSection() {
                     width: "70vw",
                     height: "90vh",
                     transform: "rotate(-16deg)",
-                    background:
-                        "linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04))",
+                    background: `linear-gradient(90deg, ${alpha(
+                        theme.palette.common.white,
+                        0.12
+                    )}, ${alpha(theme.palette.common.white, 0.04)})`,
                     borderRadius: 8,
                     filter: "blur(1px)",
                     pointerEvents: "none",
@@ -65,8 +66,14 @@ function CtaSection() {
                 sx={{
                     position: "absolute",
                     inset: 0,
-                    background:
-                        "radial-gradient(600px 300px at 15% 20%, rgba(255,255,255,0.10), transparent 60%), radial-gradient(520px 260px at 85% 70%, rgba(255,255,255,0.08), transparent 60%)",
+                    background: `radial-gradient(600px 300px at 15% 20%, ${alpha(
+                        theme.palette.common.white,
+                        0.1
+                    )}, transparent 60%),
+                      radial-gradient(520px 260px at 85% 70%, ${alpha(
+                          theme.palette.common.white,
+                          0.08
+                      )}, transparent 60%)`,
                     pointerEvents: "none",
                 }}
             />
@@ -83,8 +90,14 @@ function CtaSection() {
                         <Box
                             sx={{
                                 backdropFilter: "blur(8px)",
-                                backgroundColor: "rgba(255,255,255,0.10)",
-                                border: "1px solid rgba(255,255,255,0.28)",
+                                backgroundColor: alpha(
+                                    theme.palette.common.white,
+                                    0.1
+                                ),
+                                border: `1px solid ${alpha(
+                                    theme.palette.common.white,
+                                    0.28
+                                )}`,
                                 borderRadius: 3,
                                 p: { xs: 3, md: 4 },
                                 boxShadow: "0 20px 50px rgba(0,0,0,0.25)",
@@ -95,10 +108,13 @@ function CtaSection() {
                                 sx={{
                                     letterSpacing: 2,
                                     fontWeight: 800,
-                                    opacity: 0.95,
+                                    color: alpha(
+                                        theme.palette.common.white,
+                                        0.95
+                                    ),
                                 }}
                             >
-                                ROGALAND HAGE & BYGGSERVICE
+                                Driftli AS
                             </Typography>
 
                             <Typography
@@ -109,22 +125,33 @@ function CtaSection() {
                                     mb: 1.5,
                                     fontSize: { xs: "2rem", md: "2.5rem" },
                                     letterSpacing: "-0.01em",
+                                    color: theme.palette.common.white,
                                 }}
                             >
-                                Klar for et uteområde som alltid ser bra ut?
+                                Kvalitet i alt fra håndverk til vedlikehold –
+                                samlet i en profesjonell avtale
                             </Typography>
 
                             <Typography
                                 variant="h6"
-                                sx={{ mb: 3, fontWeight: 400, opacity: 0.95 }}
+                                sx={{
+                                    mb: 3,
+                                    fontWeight: 400,
+                                    color: alpha(
+                                        theme.palette.common.white,
+                                        0.95
+                                    ),
+                                }}
                             >
-                                Vi leverer plen, hekk, terrasse og vedlikehold –
-                                ryddig, forutsigbart og gjort skikkelig.
+                                Vi leverer håndverk, service og vedlikehold
+                                innen alle fag: tømrer, elektriker, rørlegger,
+                                renhold, fasadevask, bilverksted og
+                                gartnerarbeid – ryddig og forutsigbart.
                             </Typography>
 
-                            {/* Fordeler – runde ikon-sirkler */}
+                            {/* Fordeler */}
                             <Grid container spacing={1.5} sx={{ mb: 3 }}>
-                                {benefits.map((benefit, i) => (
+                                {benefits.map((benefit) => (
                                     <Grid
                                         key={benefit}
                                         item
@@ -142,12 +169,25 @@ function CtaSection() {
                                                 placeItems: "center",
                                                 mr: 1.25,
                                                 p: 0.5,
-                                                backgroundColor:
-                                                    "rgba(255,255,255,0.18)",
-                                                border: "1px solid rgba(255,255,255,0.28)",
+                                                backgroundColor: alpha(
+                                                    theme.palette.common.white,
+                                                    0.18
+                                                ),
+                                                border: `1px solid ${alpha(
+                                                    theme.palette.common.white,
+                                                    0.28
+                                                )}`,
+                                                width: 12,
+                                                height: 12,
                                             }}
-                                        ></Box>
-                                        <Typography variant="body1">
+                                        />
+                                        <Typography
+                                            variant="body1"
+                                            sx={{
+                                                color: theme.palette.common
+                                                    .white,
+                                            }}
+                                        >
                                             {benefit}
                                         </Typography>
                                     </Grid>
@@ -159,10 +199,12 @@ function CtaSection() {
                                 spacing={2}
                                 sx={{ flexWrap: "wrap" }}
                             >
+                                {/* Gull-CTA */}
                                 <Button
                                     variant="contained"
+                                    color="secondary"
                                     size="large"
-                                    href="tel:+4793220988" // 🔹 Direkte ringe-link
+                                    href="tel:+4793220988"
                                     endIcon={<ArrowForwardIcon />}
                                     sx={{
                                         borderRadius: 2,
@@ -170,25 +212,41 @@ function CtaSection() {
                                         py: 1.5,
                                         fontWeight: 800,
                                         textTransform: "none",
-                                        background:
-                                            "linear-gradient(90deg, #66bb6a, #43a047 60%, #2e7d32)",
-                                        boxShadow:
-                                            "0 12px 26px rgba(67,160,71,0.45)",
+                                        color: theme.palette.secondary
+                                            .contrastText,
+                                        backgroundColor:
+                                            theme.palette.secondary.main,
+                                        backgroundImage: `linear-gradient(90deg, ${theme.palette.secondary.light}, ${theme.palette.secondary.main} 60%, ${theme.palette.secondary.dark})`,
+                                        boxShadow: `0 12px 26px ${alpha(
+                                            theme.palette.secondary.dark,
+                                            0.35
+                                        )}`,
                                         "&:hover": {
                                             transform: "translateY(-1px)",
-                                            boxShadow:
-                                                "0 16px 34px rgba(67,160,71,0.55)",
+                                            backgroundImage: `linear-gradient(90deg, ${
+                                                theme.palette.secondary.light
+                                            }, ${
+                                                theme.palette.secondary.dark
+                                            } 60%, ${alpha(
+                                                theme.palette.secondary.dark,
+                                                0.9
+                                            )})`,
+                                            boxShadow: `0 16px 34px ${alpha(
+                                                theme.palette.secondary.dark,
+                                                0.5
+                                            )}`,
                                         },
                                         transition: "all .25s ease",
                                     }}
                                 >
-                                    Gratis befaring
+                                    Kontakt oss
                                 </Button>
 
+                                {/* Outline på mørk bakgrunn */}
                                 <Button
                                     variant="outlined"
                                     size="large"
-                                    startIcon={<SearchOutlinedIcon />} // 👈 swapped icon
+                                    startIcon={<SearchOutlinedIcon />}
                                     href="/about"
                                     sx={{
                                         borderRadius: 2,
@@ -196,14 +254,22 @@ function CtaSection() {
                                         py: 1.5,
                                         fontWeight: 800,
                                         textTransform: "none",
-                                        color: "#fff",
-                                        borderColor: "rgba(255,255,255,0.6)",
-                                        backgroundColor:
-                                            "rgba(255,255,255,0.08)",
+                                        color: theme.palette.common.white,
+                                        borderColor: alpha(
+                                            theme.palette.common.white,
+                                            0.6
+                                        ),
+                                        backgroundColor: alpha(
+                                            theme.palette.common.white,
+                                            0.08
+                                        ),
                                         "&:hover": {
-                                            borderColor: "#fff",
-                                            backgroundColor:
-                                                "rgba(255,255,255,0.16)",
+                                            borderColor:
+                                                theme.palette.common.white,
+                                            backgroundColor: alpha(
+                                                theme.palette.common.white,
+                                                0.16
+                                            ),
                                             transform: "translateY(-1px)",
                                         },
                                         transition: "all .25s ease",
@@ -218,7 +284,10 @@ function CtaSection() {
                                 sx={{
                                     mt: 1.5,
                                     display: "block",
-                                    opacity: 0.85,
+                                    color: alpha(
+                                        theme.palette.common.white,
+                                        0.85
+                                    ),
                                 }}
                             >
                                 *Gjelder hverdager i Rogaland.
@@ -226,7 +295,7 @@ function CtaSection() {
                         </Box>
                     </Grid>
 
-                    {/* HØYRE: Bilde med glow + lett hover */}
+                    {/* HØYRE: Bilde */}
                     <Grid
                         item
                         xs={12}
@@ -243,13 +312,17 @@ function CtaSection() {
                                 borderRadius: 3,
                                 overflow: "hidden",
                                 height: 420,
-                                // glow bak bildet
                                 "&::before": {
                                     content: '""',
                                     position: "absolute",
                                     inset: -20,
-                                    background:
-                                        "radial-gradient(60% 50% at 50% 10%, rgba(255,255,255,0.18), rgba(255,255,255,0))",
+                                    background: `radial-gradient(60% 50% at 50% 10%, ${alpha(
+                                        theme.palette.common.white,
+                                        0.18
+                                    )}, ${alpha(
+                                        theme.palette.common.white,
+                                        0
+                                    )})`,
                                     zIndex: 0,
                                 },
                             }}
@@ -269,7 +342,10 @@ function CtaSection() {
                                     objectFit: "cover",
                                     borderRadius: 3,
                                     boxShadow: "0 24px 48px rgba(0,0,0,0.35)",
-                                    border: "1px solid rgba(255,255,255,0.25)",
+                                    border: `1px solid ${alpha(
+                                        theme.palette.common.white,
+                                        0.25
+                                    )}`,
                                     transition: "transform .4s ease",
                                     "&:hover": {
                                         transform:

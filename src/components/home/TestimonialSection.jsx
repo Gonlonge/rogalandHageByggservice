@@ -1278,7 +1278,7 @@ function TestimonialSection() {
                                                 overflow: "hidden",
                                                 ...(expanded
                                                     ? {}
-                                                    : { WebkitLineClamp: 3 }), // 3 linjer som standard
+                                                    : { WebkitLineClamp: 4 }), // 3 linjer som standard
                                             }}
                                         >
                                             {c.usage}
