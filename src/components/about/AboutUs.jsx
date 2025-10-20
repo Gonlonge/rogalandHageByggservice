@@ -661,10 +661,11 @@ import {
 } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import ForestIcon from "@mui/icons-material/Forest";
-import GrassIcon from "@mui/icons-material/Grass";
-import CleaningServicesIcon from "@mui/icons-material/CleaningServices";
-import RoofingIcon from "@mui/icons-material/Roofing";
-import HandymanIcon from "@mui/icons-material/Handyman";
+import VerifiedIcon from "@mui/icons-material/Verified";
+import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import HubIcon from "@mui/icons-material/Hub";
+
 import GroupsIcon from "@mui/icons-material/Groups";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import BusinessIcon from "@mui/icons-material/Business";
@@ -679,25 +680,24 @@ function AboutUs() {
         threshold: 0.1,
     });
 
-    // VERDIER – beholder samme struktur/ikoner, men tekst er gjort generell for Driftli
     const values = [
         {
-            icon: <HandymanIcon />,
+            icon: <VerifiedIcon />,
             title: "Kvalitetssikrede fagfolk",
             desc: "Vi samler seriøse leverandører på ett sted med dokumentert kompetanse, forsikring og HMS.",
         },
         {
-            icon: <CleaningServicesIcon />,
+            icon: <ReceiptLongIcon />,
             title: "Fastpris og forutsigbarhet",
             desc: "Klare avtaler uten overraskelser. Du vet hva som leveres og hva det koster.",
         },
         {
-            icon: <RoofingIcon />,
+            icon: <SupportAgentIcon />,
             title: "Rask respons",
             desc: "Behovskartlegging og oppstart raskt. Vi prioriterer hasteoppdrag når det trengs.",
         },
         {
-            icon: <GrassIcon />,
+            icon: <HubIcon />,
             title: "Én kontakt for alt",
             desc: "Drift og koordinering i ett løp. Mindre mas for deg, bedre flyt i hverdagen.",
         },
