@@ -668,7 +668,6 @@ import HandymanIcon from "@mui/icons-material/Handyman";
 import GroupsIcon from "@mui/icons-material/Groups";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import BusinessIcon from "@mui/icons-material/Business";
-import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 
@@ -762,18 +761,15 @@ function AboutUs() {
                     className={heroInView ? "fade-in" : ""}
                     sx={{ textAlign: "center", mb: { xs: 6, md: 10 } }}
                 >
-                    <Chip
-                        label="Om Driftli AS"
-                        sx={{
-                            mb: 2,
-                            fontWeight: 600,
-                            bgcolor: theme.palette.grey[100],
-                        }}
-                    />
                     <Typography
                         variant="h2"
                         component="h1"
-                        sx={{ fontWeight: 800, mb: 2, letterSpacing: "-0.5px" }}
+                        sx={{
+                            fontWeight: 800,
+                            mb: 2,
+                            letterSpacing: "-0.5px",
+                            mt: 6,
+                        }}
                     >
                         Vedlikeholdsabonnement med profesjonelle avtaler
                     </Typography>
@@ -1026,7 +1022,6 @@ function AboutUs() {
                                 borderRadius: "50px",
                                 fontWeight: 700,
                             }}
-                            startIcon={<PhoneInTalkIcon />}
                         >
                             Ring oss direkte
                         </Button>

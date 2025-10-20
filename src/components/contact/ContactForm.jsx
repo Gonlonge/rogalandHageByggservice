@@ -453,7 +453,7 @@ import { db } from "../../firebaseConfig";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 /** ✅ Import images instead of using "/src/..." */
-import aleksanderPhoto from "../../assets/workers/aleksander.jpg";
+import aleksanderPhoto from "../../assets/workers/aleksander.png";
 // If the second person has a different file, change this import:
 import alexPhoto from "../../assets/workers/alex.jpg";
 
@@ -629,14 +629,21 @@ function ContactForm() {
                                             component="img"
                                             src={p.photoUrl}
                                             alt={p.name}
+                                            loading="lazy"
                                             sx={{
                                                 width: { xs: 140, sm: 140 },
                                                 height: { xs: 140, sm: 140 },
-                                                objectFit: "cover",
+                                                aspectRatio: "1 / 1", // holder rammen kvadratisk
+                                                objectFit: "contain", // viser hele bildet uten cropping
+                                                backgroundColor: (t) =>
+                                                    t.palette.grey[100], // diskret bakgrunn bak “letterboxing”
                                                 borderRadius: 2,
+                                                border: (t) =>
+                                                    `1px solid ${t.palette.grey[200]}`,
                                                 flexShrink: 0,
                                             }}
                                         />
+
                                         <Box sx={{ flex: 1 }}>
                                             <Typography
                                                 variant="subtitle1"

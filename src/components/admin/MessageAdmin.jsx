@@ -432,9 +432,6 @@ function MessagesAdmin() {
                     >
                         Innkommende meldinger
                     </Typography>
-                    <Box sx={{ position: "absolute", top: 0, right: 0 }}>
-                        <LogoutButton />
-                    </Box>
                 </Box>
 
                 <Typography
@@ -582,6 +579,16 @@ function MessagesAdmin() {
                         ))}
                     </Grid>
                 )}
+                <Box
+                    sx={{
+                        display: "flex",
+                        justifyContent: "flex-end",
+                        pr: 2, // spacing on the right
+                        mt: 2, // margin-top (optional)
+                    }}
+                >
+                    <LogoutButton />
+                </Box>
 
                 <Dialog
                     open={!!selectedMessage}

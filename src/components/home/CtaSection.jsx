@@ -104,20 +104,6 @@ function CtaSection() {
                             }}
                         >
                             <Typography
-                                variant="overline"
-                                sx={{
-                                    letterSpacing: 2,
-                                    fontWeight: 800,
-                                    color: alpha(
-                                        theme.palette.common.white,
-                                        0.95
-                                    ),
-                                }}
-                            >
-                                Driftli AS
-                            </Typography>
-
-                            <Typography
                                 variant="h2"
                                 component="h2"
                                 sx={{
