@@ -335,12 +335,14 @@ import CleaningServicesIcon from "@mui/icons-material/CleaningServices";
 import HandymanIcon from "@mui/icons-material/Handyman";
 
 // 🖼️ Premium: bakgrunnsbilder for hvert kort (bytt til dine egne filer)
-import imgPlen from "../../assets/privateImages/uteområde-formklippet.jpg";
-import imgHekk from "../../assets/privateImages/innvendig-kjøkken.jpg";
-import imgSesong from "../../assets/privateImages/uteområde-trapp.jpg";
-import imgTakrenner from "../../assets/privateImages/innvendig-soverom.jpg";
-import imgTerrasse from "../../assets/privateImages/utvendig-hage.jpg";
-import imgVaktmester from "../../assets/privateImages/uteområde-terrase.jpg";
+import imgElektriker from "../../assets/privateImages/ai-elektriker.jpg";
+import imgTømrer from "../../assets/privateImages/ai-tømrer.jpg";
+import imgVaktmester from "../../assets/privateImages/ai-husvask.jpg";
+import boligVask from "../../assets/privateImages/ai-boligvask.jpg";
+import imgGartner from "../../assets/privateImages/ai-gartner.jpg";
+import imgBilmekaniker from "../../assets/privateImages/ai-bilmekaniker.jpg";
+import imgRørlegger from "../../assets/privateImages/ai-rørlegger.jpg";
+import imgBlikkenslager from "../../assets/privateImages/ai-blikkenslager.jpg";
 
 // 🧩 Tjenesteliste
 const features = [
@@ -349,42 +351,42 @@ const features = [
         icon: <BuildIcon sx={{ fontSize: 22 }} />,
         description:
             "Presist arbeid, solide materialer og varige løsninger for et resultat som både ser bra ut og holder over tid.",
-        image: imgPlen,
+        image: imgTømrer,
     },
     {
         title: "Elektrikerarbeid",
         icon: <BoltIcon sx={{ fontSize: 22 }} />,
         description:
             "Sikre installasjoner, energieffektive løsninger og fagmessig utført arbeid – for et trygt og moderne hjem.",
-        image: imgHekk,
+        image: imgElektriker,
     },
     {
         title: "Rørleggertjenester",
         icon: <PlumbingIcon sx={{ fontSize: 22 }} />,
         description:
-            "Installasjon, vedlikehold og reparasjon av rør, kraner og sanitæranlegg – utført trygt og profesjonelt.",
-        image: imgSesong,
+            "Installasjon, vedlikehold og reparasjon av rør, kraner og sanitæranlegg utført trygt og profesjonelt.",
+        image: imgRørlegger,
     },
     {
         title: "Bilmekaniker",
         icon: <CarRepairIcon sx={{ fontSize: 22 }} />,
         description:
             "Service, reparasjon og vedlikehold av bilen – for trygg, effektiv og problemfri kjøring året rundt.",
-        image: imgTakrenner,
+        image: imgBilmekaniker,
     },
     {
         title: "Blikkenslager",
         icon: <RoofingIcon sx={{ fontSize: 22 }} />,
         description:
             "Montering og vedlikehold av tak, beslag og fasadedetaljer – for et tett, varig og profesjonelt resultat.",
-        image: imgTerrasse,
+        image: imgBlikkenslager,
     },
     {
         title: "Gartner",
         icon: <YardIcon sx={{ fontSize: 22 }} />,
         description:
             "Plenklipp, beskjæring, ugressfjerning og sesongrydding – for en velstelt og innbydende hage hele året.",
-        image: imgVaktmester,
+        image: imgGartner,
     },
     {
         title: "Fasade & takvask",
@@ -398,7 +400,7 @@ const features = [
         icon: <HandymanIcon sx={{ fontSize: 22 }} />,
         description:
             "Effektivt og grundig renhold av både private og næringsbygg – for et rent, ryddig og trivelig miljø hver dag.",
-        image: imgVaktmester,
+        image: boligVask,
     },
 ];
 

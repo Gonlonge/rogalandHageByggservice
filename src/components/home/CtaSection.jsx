@@ -364,8 +364,8 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { useInView } from "react-intersection-observer";
 // import { useNavigate } from "react-router-dom";
 
-import gartnerWorking from "../../assets/privateImages/utvendig-hage.jpg";
-import houseGardenTwo from "../../assets/house-garden-two.png";
+import gartnerWorking from "../../assets/house-garden.png";
+import houseGardenTwo from "../../assets/house-garden.png";
 
 const benefits = [
     "Rask besvarelse – vanligvis innen 24t*",

@@ -929,10 +929,10 @@ const contactPersons = [
         photoUrl: aleksanderPhoto,
     },
     {
-        name: "Àlēx Mäldé",
-        role: "Drift & kundekontakt",
-        email: "Àlēx@driftli.no",
-        phone: "+47 00 00 00 00",
+        name: "Alexander Molde",
+        role: "Salg / driftleder",
+        email: "alex@driftli.no",
+        phone: "+47 40 07 50 93",
         photoUrl: alexPhoto,
     },
 ];

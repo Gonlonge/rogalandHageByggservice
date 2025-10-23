@@ -22,8 +22,12 @@ const faqItems = [
         answer: "Driftli samler kvalitetssikrede fagfolk og tjenester i ett system. Som medlem får du tilgang til forhandlede priser på tømrer, elektriker, rørlegger, renhold, bilverksted, gartner og mer uten tidkrevende tilbudsrunder.",
     },
     {
+        question: "Hvordan bli medlem",
+        answer: "For å bli medlem, velg «Bli medlem» i nedtrekksmenyen der det står «Generell forespørsel». Deretter blar du ned til feltet «Bli medlem», fyller inn informasjonen din og sender inn skjemaet.",
+    },
+    {
         question: "Hvordan fungerer medlemskapet?",
-        answer: "Du tegner et vedlikeholdsabonnement der Driftli håndterer koordinering, avtaler og oppfølging for deg. Du får tilgang til faste leverandører, forutsigbare priser og månedlig oversikt over alt arbeid som utføres.",
+        answer: "Som medlem får du tilgang til våre forhandlede rammeavtaler med utvalgte leverandører. Driftli kobler deg direkte med riktig samarbeidspartner basert på ditt behov. Vi sikrer konkurransedyktige priser og kvalitet gjennom disse avtalene, mens oppfølging og koordinering håndteres mellom deg og leverandøren.",
     },
     {
         question: "Hvem kan bruke Driftli?",
@@ -43,11 +47,11 @@ const faqItems = [
     },
     {
         question: "Hvordan inngår jeg en vedlikeholdsavtale?",
-        answer: "Etter en gratis behovskartlegging setter vi opp en plan som passer deg, månedlig, sesongbasert eller årlig. Du får fast pris og tydelig oversikt over hva som inngår.",
+        answer: "Som medlem inngår du i vår vedlikeholdsavtale, hvor vi har samlet et bredt spekter av tjenester under ett tak gjennom nøye forhandlede rammeavtaler. Du har frihet til å ta kontakt ved behov, og får dermed enkel tilgang til kompetente samarbeidspartnere når det passer deg.",
     },
     {
         question: "Kan jeg bruke Driftli kun ved behov?",
-        answer: "Ja. Du kan bestille enkeltoppdrag uten å ha fast avtale. Men de fleste velger medlemskap for å få rabatter, prioritet og enklere håndtering av flere fag samtidig.",
+        answer: "Ja, så lenge du er medlem, står du fritt til å bruke Driftli når behovet oppstår. Det er ingen krav om at du må ha en fast eller løpende tjenesteavtale. Når du sender inn en forespørsel, sørger vi for at den går til riktig aktør blant våre samarbeidspartnere – basert på fagområde og rammeavtale.",
     },
     {
         question: "Hvilke områder dekker dere?",
@@ -55,19 +59,15 @@ const faqItems = [
     },
     {
         question: "Hvordan betaler jeg for tjenester?",
-        answer: "Privatkunder får faktura eller Vipps. Bedrifter og sameier får EHF-faktura og månedlig oversikt over alt arbeid. Alle priser er faste og avtalt på forhånd.",
+        answer: "Privatkunder mottar faktura. Bedrifter og sameier får EHF-faktura. Vi mottar oversikt over utført arbeid fra samarbeidspartnerne. Prisen baseres på de ulike rammeavtalene og de individuelle rabattene som gjelder.",
     },
     {
         question: "Har Driftli garanti på arbeid?",
-        answer: "Ja. Vi tilbyr fornøydgaranti gjennom våre partnerbedrifter. Eventuelle feil eller mangler blir rettet kostnadsfritt innen rimelig tid.",
+        answer: "Våre samarbeidspartnere er nøye utvalgte, seriøse aktører som følger gjeldende lover og forskrifter. Skulle det oppstå problemer med utført arbeid, håndteres dette direkte med den aktuelle leverandøren",
     },
     {
         question: "Kan jeg si opp avtalen når som helst?",
-        answer: "Ja. Du kan avslutte når som helst med 30 dagers oppsigelse. Ingen bindingstid eller skjulte gebyrer.",
-    },
-    {
-        question: "Hvordan blir jeg leverandør i Driftli?",
-        answer: "Leverandører som ønsker å samarbeide med oss kan kontakte oss direkte via kontaktskjemaet på nettsiden. Vi vurderer fagområde, referanser, HMS og kapasitet før godkjenning.",
+        answer: "Ja, du kan si opp medlemskapet på dagen uten bindingstid eller skjulte gebyrer. Vær oppmerksom på at fordeler og rabatter opphører straks, og for å få tilgang til dem igjen må du melde deg inn på nytt og betale medlemsavgift.",
     },
     {
         question: "Hvordan kontakter jeg kundeservice?",
