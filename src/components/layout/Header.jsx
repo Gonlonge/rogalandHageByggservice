@@ -39,7 +39,7 @@ function Header({ scrolled }) {
 
     const pages = [
         { label: "Hjem", path: "/" },
-        { label: "Om oss", path: "/about" },
+        { label: "Tjenester", path: "/about" },
         { label: "Kontakt", path: "/contact" },
         ...(user ? [{ label: "Admin", path: "/admin" }] : []),
     ];
