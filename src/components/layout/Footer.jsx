@@ -17,7 +17,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const COMPANY = {
     name: "Driftli AS",
-    slogan: "Profesjonelle fordeler for bygg, bil og fritid.",
+    slogan: "Forhandlede avtaler og høy kvalitet til lavere pris",
     email: "post@driftli.no",
     phone: "+47 93 22 09 88",
     address: "Stavanger & Sandnes",
@@ -173,7 +173,7 @@ export default function Footer() {
                                 "Tømrertjenester",
                                 "Elektriker",
                                 "Rørlegger",
-                                "Bilmekaniker",
+                                "Bilverksted",
                                 "Blikkenslager",
                                 "Fasade og takvask",
                                 "Renhold",

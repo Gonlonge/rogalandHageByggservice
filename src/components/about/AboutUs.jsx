@@ -1,392 +1,4 @@
-// // // import { useState } from "react";
-// // // import {
-// // //     Box,
-// // //     Container,
-// // //     Typography,
-// // //     Grid,
-// // //     Card,
-// // //     CardContent,
-// // //     Button,
-// // //     Chip,
-// // //     Avatar,
-// // //     List,
-// // //     ListItem,
-// // //     ListItemIcon,
-// // //     ListItemText,
-// // //     useTheme,
-// // //     Divider,
-// // //     Paper,
-// // //     Stack,
-// // // } from "@mui/material";
-// // // import CheckIcon from "@mui/icons-material/Check";
-// // // import ForestIcon from "@mui/icons-material/Forest";
-// // // import GrassIcon from "@mui/icons-material/Grass";
-// // // import CleaningServicesIcon from "@mui/icons-material/CleaningServices";
-// // // import RoofingIcon from "@mui/icons-material/Roofing";
-// // // import HandymanIcon from "@mui/icons-material/Handyman";
-// // // import GroupsIcon from "@mui/icons-material/Groups";
-// // // import StarBorderIcon from "@mui/icons-material/StarBorder";
-// // // import BusinessIcon from "@mui/icons-material/Business";
-// // // import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
-// // // import { useInView } from "react-intersection-observer";
-// // // import { useNavigate } from "react-router-dom";
-
-// // // function AboutUs() {
-// // //     const theme = useTheme();
-// // //     const navigate = useNavigate();
-// // //     const { ref: heroRef, inView: heroInView } = useInView({
-// // //         triggerOnce: true,
-// // //         threshold: 0.1,
-// // //     });
-
-// // //     const values = [
-// // //         {
-// // //             icon: <GrassIcon />,
-// // //             title: "Lidenskap for uteområder",
-// // //             desc: "Vi elsker å skape pene, trygge og lettstelte grøntarealer for borettslag, bedrifter og private hager",
-// // //         },
-// // //         {
-// // //             icon: <ForestIcon />,
-// // //             title: "Trygg trefelling og beskjæring",
-// // //             desc: "Sertifisert og erfarent mannskap sørger for sikker felling, stubbefresing og riktig beskjæring",
-// // //         },
-// // //         {
-// // //             icon: <CleaningServicesIcon />,
-// // //             title: "Sesongrydding & vedlikehold",
-// // //             desc: "Alt fra løvblåsing og kantklipp om høsten til vårrydding og rens av takrenner",
-// // //         },
-// // //         {
-// // //             icon: <HandymanIcon />,
-// // //             title: "Små bygg og reparasjoner",
-// // //             desc: "Vi tar oss av mindre bygg- og vedlikeholdsoppgaver for uteområder, levegger og terrasser",
-// // //         },
-// // //     ];
-
-// // //     const milestones = [
-// // //         {
-// // //             year: "2018",
-// // //             title: "Oppstart",
-// // //             text: "Rogaland Hage & Byggeservice ble etablert med fokus på plenklipp og hekk-klipp",
-// // //         },
-// // //         {
-// // //             year: "2019",
-// // //             title: "Utvider tjenester",
-// // //             text: "La til trefelling, stubbefresing og rens av takrenner",
-// // //         },
-// // //         {
-// // //             year: "2021",
-// // //             title: "Sesongavtaler",
-// // //             text: "Flere borettslag og barnehager får faste vedlikeholdsavtaler",
-// // //         },
-// // //         {
-// // //             year: "2023",
-// // //             title: "Bygg & service",
-// // //             text: "Starter med mindre bygg- og vedlikeholdsprosjekter, terrasser og levegger",
-// // //         },
-// // //         {
-// // //             year: "2024",
-// // //             title: "Fleksible pakkeløsninger",
-// // //             text: "Lanserer helårsavtaler med rydding vår/høst og beredskap for vinter",
-// // //         },
-// // //     ];
-
-// // //     const team = [
-// // //         {
-// // //             name: "Aleksander Håland.",
-// // //             role: "Daglig leder / Prosjekt",
-// // //             initials: "AH",
-// // //         },
-// // //         { name: "Olav S.", role: "Drift & kundekontakt", initials: "OS" },
-// // //     ];
-
-// // //     const clients = [
-// // //         { name: "Borettslag & sameier", icon: <GroupsIcon /> },
-// // //         { name: "Barnehager & skoler", icon: <BusinessIcon /> },
-// // //         { name: "Bedrifter & næring", icon: <StarBorderIcon /> },
-// // //         { name: "Private hageeiere", icon: <ForestIcon /> },
-// // //     ];
-
-// // //     return (
-// // //         <Box sx={{ py: { xs: 8, md: 12 } }}>
-// // //             <Container maxWidth="lg">
-// // //                 {/* HERO */}
-// // //                 <Box
-// // //                     ref={heroRef}
-// // //                     className={heroInView ? "fade-in" : ""}
-// // //                     sx={{ textAlign: "center", mb: { xs: 6, md: 10 } }}
-// // //                 >
-// // //                     <Chip
-// // //                         label="Om Dritli AS"
-// // //                         sx={{
-// // //                             mb: 2,
-// // //                             fontWeight: 600,
-// // //                             bgcolor: theme.palette.grey[100],
-// // //                         }}
-// // //                     />
-// // //                     <Typography
-// // //                         variant="h2"
-// // //                         component="h1"
-// // //                         sx={{ fontWeight: 800, mb: 2, letterSpacing: "-0.5px" }}
-// // //                     >
-// // //                         Vi tilbyr et vedlikeholdsabonnement med ferdig
-// // //                         forhandlede avtaler
-// // //                     </Typography>
-// // //                     <Typography
-// // //                         variant="h6"
-// // //                         sx={{
-// // //                             maxWidth: 900,
-// // //                             mx: "auto",
-// // //                             color: theme.palette.text.secondary,
-// // //                             fontWeight: 400,
-// // //                         }}
-// // //                     >
-// // //                         forhandler frem de beste avtalene med seriøse og
-// // //                         kvalitetssikrede aktører. Vi tilbyr et enkelt og
-// // //                         forutsigbart vedlikeholdsabonnement for deg som ønsker
-// // //                         trygghet, effektivitet og faste priser.
-// // //                     </Typography>
-// // //                 </Box>
-
-// // //                 {/* VERDIER */}
-// // //                 <Grid container spacing={3} sx={{ mb: { xs: 6, md: 10 } }}>
-// // //                     {values.map((v) => (
-// // //                         <Grid item xs={12} md={3} key={v.title}>
-// // //                             <Card
-// // //                                 sx={{
-// // //                                     height: "100%",
-// // //                                     border: `1px solid ${theme.palette.grey[200]}`,
-// // //                                     boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-// // //                                 }}
-// // //                             >
-// // //                                 <CardContent sx={{ p: 3 }}>
-// // //                                     <Stack
-// // //                                         direction="row"
-// // //                                         spacing={2}
-// // //                                         alignItems="center"
-// // //                                         sx={{ mb: 1 }}
-// // //                                     >
-// // //                                         <Box
-// // //                                             sx={{
-// // //                                                 p: 1.2,
-// // //                                                 borderRadius: 2,
-// // //                                                 bgcolor:
-// // //                                                     theme.palette.primary.light,
-// // //                                                 color: theme.palette.primary
-// // //                                                     .contrastText,
-// // //                                                 display: "inline-flex",
-// // //                                             }}
-// // //                                         >
-// // //                                             {v.icon}
-// // //                                         </Box>
-// // //                                         <Typography
-// // //                                             variant="h6"
-// // //                                             fontWeight={700}
-// // //                                         >
-// // //                                             {v.title}
-// // //                                         </Typography>
-// // //                                     </Stack>
-// // //                                     <Typography
-// // //                                         variant="body2"
-// // //                                         color="text.secondary"
-// // //                                     >
-// // //                                         {v.desc}
-// // //                                     </Typography>
-// // //                                 </CardContent>
-// // //                             </Card>
-// // //                         </Grid>
-// // //                     ))}
-// // //                 </Grid>
-
-// // //                 {/* TJENESTER */}
-// // //                 <Grid container spacing={4} sx={{ mb: { xs: 6, md: 10 } }}>
-// // //                     <Grid item xs={12} md={6}>
-// // //                         <Typography
-// // //                             variant="h4"
-// // //                             fontWeight={800}
-// // //                             sx={{ mb: 2 }}
-// // //                         >
-// // //                             Våre mest brukte tjenester
-// // //                         </Typography>
-// // //                         <List dense>
-// // //                             {[
-// // //                                 "Plenklipp & kantklipp",
-// // //                                 "Hekk-klipp & beskjæring",
-// // //                                 "Trefelling & stubbefresing",
-// // //                                 "Sesongrydding vår / høst",
-// // //                                 "Rens av takrenner",
-// // //                                 "Mindre bygg- & vedlikeholdsjobber",
-// // //                             ].map((t) => (
-// // //                                 <ListItem
-// // //                                     key={t}
-// // //                                     disableGutters
-// // //                                     sx={{ mb: 0.5 }}
-// // //                                 >
-// // //                                     <ListItemIcon sx={{ minWidth: 32 }}>
-// // //                                         <CheckIcon
-// // //                                             color="success"
-// // //                                             fontSize="small"
-// // //                                         />
-// // //                                     </ListItemIcon>
-// // //                                     <ListItemText primary={t} />
-// // //                                 </ListItem>
-// // //                             ))}
-// // //                         </List>
-// // //                         <Typography
-// // //                             variant="body2"
-// // //                             color="text.secondary"
-// // //                             sx={{ mt: 2 }}
-// // //                         >
-// // //                             Vi skreddersyr helårs og sesongavtaler tilpasset
-// // //                             ditt uteområde
-// // //                         </Typography>
-// // //                     </Grid>
-
-// // //                     <Grid item xs={12} md={6}>
-// // //                         <Card
-// // //                             sx={{
-// // //                                 height: "100%",
-// // //                                 border: `1px solid ${theme.palette.grey[200]}`,
-// // //                                 display: "flex",
-// // //                                 flexDirection: "column",
-// // //                             }}
-// // //                         >
-// // //                             <CardContent sx={{ p: 3 }}>
-// // //                                 <Typography
-// // //                                     variant="h6"
-// // //                                     fontWeight={700}
-// // //                                     sx={{ mb: 1 }}
-// // //                                 >
-// // //                                     Hvorfor velge oss?
-// // //                                 </Typography>
-// // //                                 <List dense>
-// // //                                     {[
-// // //                                         "Lokal og fleksibel service",
-// // //                                         "Fast kontaktperson",
-// // //                                         "Forutsigbare priser og avtaler",
-// // //                                         "Fokus på HMS og trygg utførelse",
-// // //                                         "Rask respons ved hasteoppdrag",
-// // //                                     ].map((t) => (
-// // //                                         <ListItem key={t} disableGutters>
-// // //                                             <ListItemIcon sx={{ minWidth: 32 }}>
-// // //                                                 <CheckIcon
-// // //                                                     color="success"
-// // //                                                     fontSize="small"
-// // //                                                 />
-// // //                                             </ListItemIcon>
-// // //                                             <ListItemText primary={t} />
-// // //                                         </ListItem>
-// // //                                     ))}
-// // //                                 </List>
-// // //                             </CardContent>
-// // //                         </Card>
-// // //                     </Grid>
-// // //                 </Grid>
-
-// // //                 {/* TEAM — SENTRERT */}
-// // //                 <Box sx={{ mb: { xs: 6, md: 10 } }}>
-// // //                     <Typography
-// // //                         variant="h4"
-// // //                         fontWeight={800}
-// // //                         sx={{ mb: 3, textAlign: "center" }}
-// // //                     >
-// // //                         Møt teamet
-// // //                     </Typography>
-// // //                     <Grid container spacing={3} justifyContent="center">
-// // //                         {team.map((t) => (
-// // //                             <Grid item xs={12} sm={6} md={3} key={t.name}>
-// // //                                 <Card
-// // //                                     sx={{
-// // //                                         height: "100%",
-// // //                                         textAlign: "center",
-// // //                                         border: `1px solid ${theme.palette.grey[200]}`,
-// // //                                     }}
-// // //                                 >
-// // //                                     <CardContent sx={{ p: 3 }}>
-// // //                                         <Avatar
-// // //                                             sx={{
-// // //                                                 width: 72,
-// // //                                                 height: 72,
-// // //                                                 mx: "auto",
-// // //                                                 mb: 1.5,
-// // //                                                 bgcolor:
-// // //                                                     theme.palette.primary.main,
-// // //                                                 fontWeight: 700,
-// // //                                             }}
-// // //                                         >
-// // //                                             {t.initials}
-// // //                                         </Avatar>
-// // //                                         <Typography
-// // //                                             variant="subtitle1"
-// // //                                             fontWeight={700}
-// // //                                         >
-// // //                                             {t.name}
-// // //                                         </Typography>
-// // //                                         <Typography
-// // //                                             variant="body2"
-// // //                                             color="text.secondary"
-// // //                                         >
-// // //                                             {t.role}
-// // //                                         </Typography>
-// // //                                     </CardContent>
-// // //                                 </Card>
-// // //                             </Grid>
-// // //                         ))}
-// // //                     </Grid>
-// // //                 </Box>
-
-// // //                 {/* CTA */}
-// // //                 <Box sx={{ textAlign: "center" }}>
-// // //                     <Typography variant="h5" sx={{ mb: 2 }}>
-// // //                         Klar for å avtale befaring eller få pristilbud?
-// // //                     </Typography>
-// // //                     <Stack
-// // //                         spacing={2}
-// // //                         direction={{ xs: "column", sm: "row" }}
-// // //                         justifyContent="center"
-// // //                     >
-// // //                         <Button
-// // //                             variant="contained"
-// // //                             size="large"
-// // //                             onClick={() => navigate("/contact")}
-// // //                             sx={{
-// // //                                 px: 4,
-// // //                                 py: 1.5,
-// // //                                 borderRadius: "50px",
-// // //                                 fontWeight: 700,
-// // //                             }}
-// // //                         >
-// // //                             Kontakt oss
-// // //                         </Button>
-// // //                         <Button
-// // //                             variant="outlined"
-// // //                             size="large"
-// // //                             href="tel:+4793220988"
-// // //                             sx={{
-// // //                                 px: 4,
-// // //                                 py: 1.5,
-// // //                                 borderRadius: "50px",
-// // //                                 fontWeight: 700,
-// // //                             }}
-// // //                         >
-// // //                             Ring oss direkte
-// // //                         </Button>
-// // //                     </Stack>
-// // //                     <Typography
-// // //                         variant="caption"
-// // //                         display="block"
-// // //                         color="text.secondary"
-// // //                         sx={{ mt: 1.5 }}
-// // //                     >
-// // //                         Vi tilbyr gratis befaring i Stavanger og Sandnes området
-// // //                     </Typography>
-// // //                 </Box>
-// // //             </Container>
-// // //         </Box>
-// // //     );
-// // // }
-
-// // // export default AboutUs;
-
+// // import React from "react";
 // // import {
 // //     Box,
 // //     Container,
@@ -394,252 +6,401 @@
 // //     Grid,
 // //     Card,
 // //     CardContent,
+// //     Button,
+// //     Avatar,
 // //     List,
 // //     ListItem,
 // //     ListItemIcon,
 // //     ListItemText,
 // //     useTheme,
+// //     Stack,
 // // } from "@mui/material";
-// // import HandymanIcon from "@mui/icons-material/Handyman";
-// // import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
-// // import PlumbingIcon from "@mui/icons-material/Plumbing";
-// // import BuildIcon from "@mui/icons-material/Build";
-// // import RoofingIcon from "@mui/icons-material/Roofing";
-// // import LocalLaundryServiceIcon from "@mui/icons-material/LocalLaundryService";
-// // import CleaningServicesIcon from "@mui/icons-material/CleaningServices";
-// // import GrassIcon from "@mui/icons-material/Grass";
 // // import CheckIcon from "@mui/icons-material/Check";
+// // import ForestIcon from "@mui/icons-material/Forest";
+// // import VerifiedIcon from "@mui/icons-material/Verified";
+// // import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
+// // import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+// // import HubIcon from "@mui/icons-material/Hub";
+// // import GroupsIcon from "@mui/icons-material/Groups";
+// // import StarBorderIcon from "@mui/icons-material/StarBorder";
+// // import BusinessIcon from "@mui/icons-material/Business";
 // // import { useInView } from "react-intersection-observer";
+// // import { useNavigate } from "react-router-dom";
 
-// // const values = [
-// //     {
-// //         icon: <HandymanIcon />,
-// //         title: "Tømrertjenester",
-// //         desc: "Alt fra små reparasjoner til større byggeoppdrag – alltid nøyaktig, solid og forskriftsmessig utført.",
-// //     },
-// //     {
-// //         icon: <ElectricBoltIcon />,
-// //         title: "Elektriker",
-// //         desc: "Autoriserte elektrikere som leverer trygg og moderne installasjon, service og feilsøking.",
-// //     },
-// //     {
-// //         icon: <PlumbingIcon />,
-// //         title: "Rørlegger",
-// //         desc: "Erfarne fagfolk for alt innen vann, avløp og sanitær – fra lekkasjer til komplette oppgraderinger.",
-// //     },
-// //     {
-// //         icon: <BuildIcon />,
-// //         title: "Bilmekaniker",
-// //         desc: "Service, reparasjon og EU-kontroll utført av profesjonelle verksteder med kvalitet i fokus.",
-// //     },
-// //     {
-// //         icon: <RoofingIcon />,
-// //         title: "Blikkenslager",
-// //         desc: "Presis utførelse i metallarbeid, taktekking og beslag – både estetisk og funksjonelt.",
-// //     },
-// //     {
-// //         icon: <LocalLaundryServiceIcon />,
-// //         title: "Fasade og takvask",
-// //         desc: "Effektiv og skånsom rengjøring som forlenger levetiden på bygg og overflater.",
-// //     },
-// //     {
-// //         icon: <CleaningServicesIcon />,
-// //         title: "Renhold",
-// //         desc: "Profesjonelt renhold for bedrift og privat – fleksible avtaler og høy kvalitet hver gang.",
-// //     },
-// //     {
-// //         icon: <GrassIcon />,
-// //         title: "Gartner",
-// //         desc: "Vedlikehold, beplantning og sesongarbeid – vi holder hager og grøntområder i topp stand hele året.",
-// //     },
-// // ];
-
-// // function ServicesSection() {
+// // function AboutUs() {
 // //     const theme = useTheme();
-// //     const { ref } = useInView({ triggerOnce: true, threshold: 0.1 });
+// //     const navigate = useNavigate();
+// //     const { ref: heroRef, inView: heroInView } = useInView({
+// //         triggerOnce: true,
+// //         threshold: 0.1,
+// //     });
+
+// //     const values = [
+// //         {
+// //             icon: <VerifiedIcon />,
+// //             title: "Vi forhandler – du får fordelen",
+// //             desc: "Du får tilgang til priser og vilkår som normalt er forbeholdt storkunder.",
+// //         },
+// //         {
+// //             icon: <ReceiptLongIcon />,
+// //             title: "Kvalitet du kan stole på",
+// //             desc: "Alle leverandører er nøye valgt ut og har dokumentert erfaring.",
+// //         },
+// //         {
+// //             icon: <SupportAgentIcon />,
+// //             title: "Rask tilgang til riktige aktører",
+// //             desc: "Vi prioriterer hastebehov og kobler deg raskt med riktig tjenesteyter.",
+// //         },
+// //         {
+// //             icon: <HubIcon />,
+// //             title: "En kontakt for alt",
+// //             desc: "Alt drift og koordinering samlet på ett sted, bedre flyt i hverdagen med storkunderabatter.",
+// //         },
+// //     ];
+
+// //     const team = [
+// //         {
+// //             name: "Aleksander Håland",
+// //             role: "Daglig leder / Prosjekt",
+// //             initials: "AH",
+// //         },
+// //         { name: "Alexander Molde", role: "Salg / driftleder", initials: "AM" },
+// //     ];
 
 // //     return (
 // //         <Box
-// //             ref={ref}
 // //             sx={{
-// //                 py: { xs: 8, md: 10 },
-// //                 backgroundColor: theme.palette.grey[50],
+// //                 py: { xs: 8, md: 12 },
+// //                 // 🔒 Local fix: block horizontal scroll for this section only
+// //                 overflowX: "clip",
+// //                 position: "relative",
 // //             }}
 // //         >
-// //             <Container maxWidth="lg">
-// //                 <Typography
-// //                     variant="overline"
-// //                     sx={{
-// //                         textAlign: "center",
-// //                         display: "block",
-// //                         fontWeight: 700,
-// //                         letterSpacing: 2,
-// //                         mb: 2,
-// //                         color: theme.palette.primary.main,
-// //                     }}
+// //             <Container
+// //                 maxWidth="lg"
+// //                 // 🔧 Ensure mobile has padding so Grid negative margins don't overflow
+// //                 sx={{ px: { xs: 2, sm: 3 } }}
+// //             >
+// //                 {/* HERO */}
+// //                 <Box
+// //                     ref={heroRef}
+// //                     className={heroInView ? "fade-in" : ""}
+// //                     sx={{ textAlign: "center", mb: { xs: 6, md: 10 } }}
 // //                 >
-// //                     DRIFTLI TJENESTER
-// //                 </Typography>
+// //                     <Typography
+// //                         variant="h2"
+// //                         component="h1"
+// //                         sx={{
+// //                             fontWeight: 800,
+// //                             mb: 2,
+// //                             letterSpacing: "-0.5px",
+// //                             mt: 6,
+// //                             // 🧱 prevent words from forcing horizontal growth
+// //                             wordBreak: "break-word",
+// //                             overflowWrap: "anywhere",
+// //                         }}
+// //                     >
+// //                         Vedlikeholdsabonnement med profesjonelle avtaler
+// //                     </Typography>
+// //                     <Typography
+// //                         variant="h6"
+// //                         sx={{
+// //                             maxWidth: 900,
+// //                             mx: "auto",
+// //                             color: theme.palette.text.secondary,
+// //                             fontWeight: 400,
+// //                         }}
+// //                     >
+// //                         Vi forhandler frem gode betingelser med kvalitetssikrede
+// //                         aktører. Med Driftli får du en enkel og forutsigbar
+// //                         løsning for drift og vedlikehold, med klare priser og
+// //                         trygg gjennomføring.
+// //                     </Typography>
+// //                 </Box>
 
-// //                 <Typography
-// //                     variant="h3"
-// //                     align="center"
-// //                     sx={{
-// //                         fontWeight: 800,
-// //                         mb: 6,
-// //                         color: theme.palette.text.primary,
-// //                     }}
-// //                 >
-// //                     Kvalitetssikrede fagfolk – alt samlet på ett sted
-// //                 </Typography>
-
-// //                 {/* Ikon-kort for alle fag */}
-// //                 <Grid container spacing={4} sx={{ mb: { xs: 6, md: 10 } }}>
-// //                     {values.map((value, i) => (
-// //                         <Grid item xs={12} sm={6} md={3} key={i}>
-// //                             <Card
-// //                                 elevation={3}
-// //                                 sx={{
-// //                                     height: "100%",
-// //                                     borderRadius: 3,
-// //                                     transition:
-// //                                         "transform 0.3s ease, box-shadow 0.3s ease",
-// //                                     "&:hover": {
-// //                                         transform: "translateY(-6px)",
-// //                                         boxShadow:
-// //                                             "0 16px 32px rgba(0,0,0,0.15)",
-// //                                     },
-// //                                 }}
-// //                             >
-// //                                 <CardContent
+// //                 {/* VERDIER */}
+// //                 <Box sx={{ mb: { xs: 6, md: 10 }, overflowX: "clip" }}>
+// //                     <Grid container spacing={3}>
+// //                         {values.map((v) => (
+// //                             <Grid item xs={12} md={3} key={v.title}>
+// //                                 <Card
 // //                                     sx={{
-// //                                         textAlign: "center",
-// //                                         p: 3,
+// //                                         height: "100%",
+// //                                         border: `1px solid ${theme.palette.grey[200]}`,
+// //                                         boxShadow:
+// //                                             "0 4px 12px rgba(0,0,0,0.05)",
+// //                                         // 🚫 avoid card content creating overflow on mobile
+// //                                         overflow: "hidden",
 // //                                     }}
 // //                                 >
-// //                                     <Box
-// //                                         sx={{
-// //                                             color: theme.palette.primary.main,
-// //                                             fontSize: 48,
-// //                                             mb: 1,
-// //                                         }}
+// //                                     <CardContent sx={{ p: 3 }}>
+// //                                         <Stack
+// //                                             direction="row"
+// //                                             spacing={2}
+// //                                             alignItems="center"
+// //                                             sx={{ mb: 1 }}
+// //                                         >
+// //                                             <Box
+// //                                                 sx={{
+// //                                                     p: 1.2,
+// //                                                     borderRadius: 2,
+// //                                                     bgcolor:
+// //                                                         theme.palette.primary
+// //                                                             .light,
+// //                                                     color: theme.palette.primary
+// //                                                         .contrastText,
+// //                                                     display: "inline-flex",
+// //                                                     flexShrink: 0,
+// //                                                 }}
+// //                                             >
+// //                                                 {v.icon}
+// //                                             </Box>
+// //                                             <Typography
+// //                                                 variant="h6"
+// //                                                 fontWeight={700}
+// //                                                 sx={{ wordBreak: "break-word" }}
+// //                                             >
+// //                                                 {v.title}
+// //                                             </Typography>
+// //                                         </Stack>
+// //                                         <Typography
+// //                                             variant="body2"
+// //                                             color="text.secondary"
+// //                                         >
+// //                                             {v.desc}
+// //                                         </Typography>
+// //                                     </CardContent>
+// //                                 </Card>
+// //                             </Grid>
+// //                         ))}
+// //                     </Grid>
+// //                 </Box>
+
+// //                 {/* TJENESTER */}
+// //                 <Box sx={{ mb: { xs: 6, md: 10 }, overflowX: "clip" }}>
+// //                     <Grid container spacing={4}>
+// //                         <Grid item xs={12} md={6}>
+// //                             <Typography
+// //                                 variant="h4"
+// //                                 fontWeight={800}
+// //                                 sx={{ mb: 2 }}
+// //                             >
+// //                                 Driftli tjenester
+// //                             </Typography>
+// //                             <List dense>
+// //                                 {[
+// //                                     "Tømrertjenester",
+// //                                     "Taktekker",
+// //                                     "Rørlegger",
+// //                                     "Elektriker",
+// //                                     "Ventilasjonstekniker",
+// //                                     "Maler",
+// //                                     "Blikkenslager",
+// //                                     "Glassmester",
+// //                                     "Trappeleverandør",
+// //                                     "Kjøkkenleverandør",
+// //                                     "Baderomsinnredning",
+// //                                     "Renholdstjenester",
+// //                                     "Gartnerfirma",
+// //                                     "Vaktmestertjenester",
+// //                                     "Bilverksted",
+// //                                     "Dekkhotell",
+// //                                     "Fritidstilbud",
+// //                                     "Grunnarbeid og graving",
+// //                                     "Betongarbeid",
+// //                                     "Murer",
+// //                                 ].map((t) => (
+// //                                     <ListItem
+// //                                         key={t}
+// //                                         disableGutters
+// //                                         sx={{ mb: 0.5 }}
 // //                                     >
-// //                                         {value.icon}
-// //                                     </Box>
+// //                                         <ListItemIcon sx={{ minWidth: 32 }}>
+// //                                             <CheckIcon
+// //                                                 color="success"
+// //                                                 fontSize="small"
+// //                                             />
+// //                                         </ListItemIcon>
+// //                                         <ListItemText primary={t} />
+// //                                     </ListItem>
+// //                                 ))}
+// //                             </List>
+// //                         </Grid>
+
+// //                         <Grid item xs={12} md={6}>
+// //                             <Card
+// //                                 sx={{
+// //                                     height: "100%",
+// //                                     border: `1px solid ${theme.palette.grey[200]}`,
+// //                                     display: "flex",
+// //                                     flexDirection: "column",
+// //                                     overflow: "hidden",
+// //                                 }}
+// //                             >
+// //                                 <CardContent sx={{ p: 3 }}>
 // //                                     <Typography
 // //                                         variant="h6"
-// //                                         sx={{
-// //                                             fontWeight: 700,
-// //                                             mb: 1,
-// //                                         }}
+// //                                         fontWeight={700}
+// //                                         sx={{ mb: 1 }}
 // //                                     >
-// //                                         {value.title}
+// //                                         Hvorfor velge oss?
 // //                                     </Typography>
-// //                                     <Typography
-// //                                         variant="body2"
-// //                                         color="text.secondary"
-// //                                     >
-// //                                         {value.desc}
-// //                                     </Typography>
+// //                                     <List dense>
+// //                                         {[
+// //                                             "Kvalitetssikrede fagfolk med dokumentert erfaring",
+// //                                             "Du får tilgang til priser og vilkår som normalt er forbeholdt storkunder",
+// //                                             "Du får rabatter uansett om det gjelder timepris eller fastprisavtale",
+// //                                             "Vi prioriterer hastebehov og kobler deg raskt med riktig aktør",
+// //                                             "Du slipper å koordinere med flere aktører – vi samler alt i én tjeneste",
+// //                                             "Vi følger opp og sikrer at du får det du har blitt lovet",
+// //                                             "Tjenester tilpasset både privatpersoner og bedrifter",
+// //                                             "Rask respons – vanligvis innen 24 timer",
+// //                                         ].map((t) => (
+// //                                             <ListItem key={t} disableGutters>
+// //                                                 <ListItemIcon
+// //                                                     sx={{ minWidth: 32 }}
+// //                                                 >
+// //                                                     <CheckIcon
+// //                                                         color="success"
+// //                                                         fontSize="small"
+// //                                                     />
+// //                                                 </ListItemIcon>
+// //                                                 <ListItemText primary={t} />
+// //                                             </ListItem>
+// //                                         ))}
+// //                                     </List>
 // //                                 </CardContent>
 // //                             </Card>
 // //                         </Grid>
-// //                     ))}
-// //                 </Grid>
-
-// //                 {/* TJENESTER */}
-// //                 <Grid container spacing={4} sx={{ mb: { xs: 6, md: 10 } }}>
-// //                     <Grid item xs={12} md={6}>
-// //                         <Typography
-// //                             variant="h4"
-// //                             fontWeight={800}
-// //                             sx={{ mb: 2 }}
-// //                         >
-// //                             Våre mest brukte tjenester
-// //                         </Typography>
-// //                         <List dense>
-// //                             {[
-// //                                 "Tømrertjenester",
-// //                                 "Elektriker",
-// //                                 "Rørlegger",
-// //                                 "Bilmekaniker",
-// //                                 "Blikkenslager",
-// //                                 "Fasade og takvask",
-// //                                 "Renhold",
-// //                                 "Gartner",
-// //                             ].map((t) => (
-// //                                 <ListItem
-// //                                     key={t}
-// //                                     disableGutters
-// //                                     sx={{ mb: 0.5 }}
-// //                                 >
-// //                                     <ListItemIcon sx={{ minWidth: 32 }}>
-// //                                         <CheckIcon
-// //                                             color="success"
-// //                                             fontSize="small"
-// //                                         />
-// //                                     </ListItemIcon>
-// //                                     <ListItemText primary={t} />
-// //                                 </ListItem>
-// //                             ))}
-// //                         </List>
-// //                         <Typography
-// //                             variant="body2"
-// //                             color="text.secondary"
-// //                             sx={{ mt: 2 }}
-// //                         >
-// //                             Vi skreddersyr service og vedlikeholdsplaner for
-// //                             privat, borettslag og bedrift
-// //                         </Typography>
 // //                     </Grid>
+// //                 </Box>
 
-// //                     <Grid item xs={12} md={6}>
-// //                         <Card
+// //                 {/* TEAM */}
+// //                 <Box sx={{ mb: { xs: 6, md: 10 } }}>
+// //                     <Typography
+// //                         variant="h4"
+// //                         fontWeight={800}
+// //                         sx={{ textAlign: "center", mb: 1 }}
+// //                     >
+// //                         Møt teamet
+// //                     </Typography>
+// //                     <Typography
+// //                         variant="h6"
+// //                         sx={{
+// //                             maxWidth: 900,
+// //                             mx: "auto",
+// //                             color: theme.palette.text.secondary,
+// //                             fontWeight: 400,
+// //                             textAlign: "center",
+// //                             mb: 8,
+// //                         }}
+// //                     >
+// //                         Vi hjelper borettslag, bedrifter og private med alt fra
+// //                         praktiske tjenester til bilrelaterte behov og lokale
+// //                         fritidstilbud. Med én avtale får du tilgang til
+// //                         rammeavtaler for fordeler, kvalitetssikrede aktører og
+// //                         en kontaktperson som koordinerer alt. Enklere hverdag,
+// //                         bedre oversikt – og mer tid til det som betyr noe. Som
+// //                         medlem får du tilgang til rammeavtaler og fordeler
+// //                     </Typography>
+// //                     <Grid container spacing={3} justifyContent="center">
+// //                         {team.map((t) => (
+// //                             <Grid item xs={12} sm={6} md={3} key={t.name}>
+// //                                 <Card
+// //                                     sx={{
+// //                                         height: "100%",
+// //                                         textAlign: "center",
+// //                                         border: `1px solid ${theme.palette.grey[200]}`,
+// //                                         overflow: "hidden",
+// //                                     }}
+// //                                 >
+// //                                     <CardContent sx={{ p: 3 }}>
+// //                                         <Avatar
+// //                                             sx={{
+// //                                                 width: 72,
+// //                                                 height: 72,
+// //                                                 mx: "auto",
+// //                                                 mb: 1.5,
+// //                                                 bgcolor:
+// //                                                     theme.palette.primary.main,
+// //                                                 fontWeight: 700,
+// //                                             }}
+// //                                         >
+// //                                             {t.initials}
+// //                                         </Avatar>
+// //                                         <Typography
+// //                                             variant="subtitle1"
+// //                                             fontWeight={700}
+// //                                         >
+// //                                             {t.name}
+// //                                         </Typography>
+// //                                         <Typography
+// //                                             variant="body2"
+// //                                             color="text.secondary"
+// //                                         >
+// //                                             {t.role}
+// //                                         </Typography>
+// //                                     </CardContent>
+// //                                 </Card>
+// //                             </Grid>
+// //                         ))}
+// //                     </Grid>
+// //                 </Box>
+
+// //                 {/* CTA */}
+// //                 <Box sx={{ textAlign: "center" }}>
+// //                     <Typography variant="h5" sx={{ mb: 2 }}>
+// //                         Klar for å avtale befaring eller få pristilbud?
+// //                     </Typography>
+// //                     <Stack
+// //                         spacing={2}
+// //                         direction={{ xs: "column", sm: "row" }}
+// //                         justifyContent="center"
+// //                     >
+// //                         <Button
+// //                             variant="contained"
+// //                             size="large"
+// //                             onClick={() => navigate("/contact")}
 // //                             sx={{
-// //                                 height: "100%",
-// //                                 border: `1px solid ${theme.palette.grey[200]}`,
-// //                                 display: "flex",
-// //                                 flexDirection: "column",
+// //                                 px: 4,
+// //                                 py: 1.5,
+// //                                 borderRadius: "50px",
+// //                                 fontWeight: 700,
 // //                             }}
 // //                         >
-// //                             <CardContent sx={{ p: 3 }}>
-// //                                 <Typography
-// //                                     variant="h6"
-// //                                     fontWeight={700}
-// //                                     sx={{ mb: 1 }}
-// //                                 >
-// //                                     Hvorfor velge Driftli?
-// //                                 </Typography>
-// //                                 <List dense>
-// //                                     {[
-// //                                         "Kvalitetssikrede fagfolk",
-// //                                         "Fastpris og forutsigbare avtaler",
-// //                                         "Én kontakt som koordinerer alt",
-// //                                         "Forsikret arbeid og HMS dokumentasjon",
-// //                                         "Rask hjelp vanligvis innen 24 timer",
-// //                                     ].map((t) => (
-// //                                         <ListItem key={t} disableGutters>
-// //                                             <ListItemIcon sx={{ minWidth: 32 }}>
-// //                                                 <CheckIcon
-// //                                                     color="success"
-// //                                                     fontSize="small"
-// //                                                 />
-// //                                             </ListItemIcon>
-// //                                             <ListItemText primary={t} />
-// //                                         </ListItem>
-// //                                     ))}
-// //                                 </List>
-// //                             </CardContent>
-// //                         </Card>
-// //                     </Grid>
-// //                 </Grid>
+// //                             Kontakt oss
+// //                         </Button>
+// //                         <Button
+// //                             variant="outlined"
+// //                             size="large"
+// //                             onClick={() => navigate("/contact")}
+// //                             sx={{
+// //                                 px: 4,
+// //                                 py: 1.5,
+// //                                 borderRadius: "50px",
+// //                                 fontWeight: 700,
+// //                             }}
+// //                         >
+// //                             Ring oss direkte
+// //                         </Button>
+// //                     </Stack>
+// //                     <Typography
+// //                         variant="caption"
+// //                         display="block"
+// //                         color="text.secondary"
+// //                         sx={{ mt: 1.5 }}
+// //                     >
+// //                         Vi tilbyr gratis befaring i Stavanger og Sandnes området
+// //                     </Typography>
+// //                 </Box>
 // //             </Container>
 // //         </Box>
 // //     );
 // // }
 
-// // export default ServicesSection;
+// // export default AboutUs;
 
+// import React, { useState } from "react";
 // import {
 //     Box,
 //     Container,
@@ -648,27 +409,20 @@
 //     Card,
 //     CardContent,
 //     Button,
-//     Chip,
 //     Avatar,
 //     List,
 //     ListItem,
 //     ListItemIcon,
 //     ListItemText,
 //     useTheme,
-//     Divider,
-//     Paper,
 //     Stack,
+//     Collapse,
 // } from "@mui/material";
 // import CheckIcon from "@mui/icons-material/Check";
-// import ForestIcon from "@mui/icons-material/Forest";
 // import VerifiedIcon from "@mui/icons-material/Verified";
 // import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 // import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 // import HubIcon from "@mui/icons-material/Hub";
-
-// import GroupsIcon from "@mui/icons-material/Groups";
-// import StarBorderIcon from "@mui/icons-material/StarBorder";
-// import BusinessIcon from "@mui/icons-material/Business";
 // import { useInView } from "react-intersection-observer";
 // import { useNavigate } from "react-router-dom";
 
@@ -680,59 +434,28 @@
 //         threshold: 0.1,
 //     });
 
+//     const [showAll, setShowAll] = useState(false);
+
 //     const values = [
 //         {
 //             icon: <VerifiedIcon />,
-//             title: "Kvalitetssikrede fagfolk",
-//             desc: "Vi samler seriøse leverandører på ett sted med dokumentert kompetanse, forsikring og HMS.",
+//             title: "Vi forhandler – du får fordelen",
+//             desc: "Du får tilgang til priser og vilkår som normalt er forbeholdt storkunder.",
 //         },
 //         {
 //             icon: <ReceiptLongIcon />,
-//             title: "Fastpris og forutsigbarhet",
-//             desc: "Klare avtaler uten overraskelser. Du vet hva som leveres og hva det koster.",
+//             title: "Kvalitet du kan stole på",
+//             desc: "Alle leverandører er nøye valgt ut og har dokumentert erfaring.",
 //         },
 //         {
 //             icon: <SupportAgentIcon />,
-//             title: "Rask respons",
-//             desc: "Behovskartlegging og oppstart raskt. Vi prioriterer hasteoppdrag når det trengs.",
+//             title: "Rask tilgang til riktige aktører",
+//             desc: "Vi prioriterer hastebehov og kobler deg raskt med riktig tjenesteyter.",
 //         },
 //         {
 //             icon: <HubIcon />,
-//             title: "Én kontakt for alt",
-//             desc: "Drift og koordinering i ett løp. Mindre mas for deg, bedre flyt i hverdagen.",
-//         },
-//     ];
-
-//     const milestones = [
-//         {
-//             year: "2020",
-//             title: "Idéen blir født",
-//             text: "Driftli-konseptet etableres med mål om å samle kvalitetssikrede fagfolk i én plattform.",
-//         },
-//         {
-//             year: "2021",
-//             title: "Pilot i Rogaland",
-//             text: "De første kundene får prøve vedlikeholdsabonnementet. Fokus på borettslag og småbedrifter.",
-//         },
-//         {
-//             year: "2022",
-//             title: "Utvidelse av fagområder",
-//             text: "Elektriker, rørlegger, renhold og fasadevask legges til i tjenestespekteret.",
-//         },
-//         {
-//             year: "2023",
-//             title: "Digitale avtaler og medlemskap",
-//             text: "Kunder kan tegne og administrere avtaler digitalt med fastpris og enkel oversikt.",
-//         },
-//         {
-//             year: "2024",
-//             title: "Full lansering av Driftli",
-//             text: "Driftli lanseres offentlig som Norges første komplette plattform for drift og vedlikehold.",
-//         },
-//         {
-//             year: "2025",
-//             title: "Profesjonelle rammeavtaler",
-//             text: "Nye medlemsavtaler for bedrifter og sameier med felles drifts- og vedlikeholdsplaner.",
+//             title: "En kontakt for alt",
+//             desc: "Alt drift og koordinering samlet på ett sted – bedre flyt i hverdagen.",
 //         },
 //     ];
 
@@ -742,19 +465,50 @@
 //             role: "Daglig leder / Prosjekt",
 //             initials: "AH",
 //         },
-//         { name: "Àlēx Mäldé", role: "Drift & kundekontakt", initials: "ÀM" },
+//         { name: "Alexander Molde", role: "Salg / driftsleder", initials: "AM" },
 //     ];
 
-//     const clients = [
-//         { name: "Borettslag & sameier", icon: <GroupsIcon /> },
-//         { name: "Barnehager & skoler", icon: <BusinessIcon /> },
-//         { name: "Bedrifter & næring", icon: <StarBorderIcon /> },
-//         { name: "Private hageeiere", icon: <ForestIcon /> },
+//     // Hele tjenestelista
+//     const services = [
+//         "Tømrertjenester",
+//         "Taktekker",
+//         "Rørlegger",
+//         "Elektriker",
+//         "Ventilasjonstekniker",
+//         "Maler",
+//         "Blikkenslager",
+//         "Glassmester",
+//         "Trappeleverandør",
+//         "Kjøkkenleverandør",
+//         "Baderomsinnredning",
+//         "Renholdstjenester",
+//         "Gartnerfirma",
+//         "Vaktmestertjenester",
+//         "Bilverksted",
+//         "Dekkhotell",
+//         "Fritidstilbud",
+//         "Grunnarbeid og graving",
+//         "Betongarbeid",
+//         "Murer",
 //     ];
+
+//     // Start “Vis mer” fra denne etiketten (ellers fallback til 9)
+//     const collapseStartLabel = "Maler";
+//     const foundIndex = services.findIndex((s) => s === collapseStartLabel);
+//     const initialCount = foundIndex >= 0 ? foundIndex : 9;
+
+//     const top = services.slice(0, initialCount); // alltid synlig
+//     const rest = services.slice(initialCount); // vis mer / færre
 
 //     return (
-//         <Box sx={{ py: { xs: 8, md: 12 } }}>
-//             <Container maxWidth="lg">
+//         <Box
+//             sx={{
+//                 py: { xs: 8, md: 12 },
+//                 overflowX: "clip",
+//                 position: "relative",
+//             }}
+//         >
+//             <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3 } }}>
 //                 {/* HERO */}
 //                 <Box
 //                     ref={heroRef}
@@ -769,9 +523,11 @@
 //                             mb: 2,
 //                             letterSpacing: "-0.5px",
 //                             mt: 6,
+//                             wordBreak: "break-word",
+//                             overflowWrap: "anywhere",
 //                         }}
 //                     >
-//                         Vedlikeholdsabonnement med profesjonelle avtaler
+//                         Driftlis tjenestefordeler
 //                     </Typography>
 //                     <Typography
 //                         variant="h6"
@@ -782,127 +538,109 @@
 //                             fontWeight: 400,
 //                         }}
 //                     >
-//                         Vi forhandler frem gode betingelser med kvalitetssikrede
-//                         aktører. Med Driftli får du en enkel og forutsigbar
-//                         løsning for drift og vedlikehold, med klare priser og
-//                         trygg gjennomføring.
+//                         Driftli gir deg tilgang til utvalgte leverandører og
+//                         lokale fordelsavtaler med bedre vilkår, enklere tilgang
+//                         og høyere trygghet.
 //                     </Typography>
 //                 </Box>
 
 //                 {/* VERDIER */}
-//                 <Grid container spacing={3} sx={{ mb: { xs: 6, md: 10 } }}>
-//                     {values.map((v) => (
-//                         <Grid item xs={12} md={3} key={v.title}>
-//                             <Card
-//                                 sx={{
-//                                     height: "100%",
-//                                     border: `1px solid ${theme.palette.grey[200]}`,
-//                                     boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-//                                 }}
-//                             >
-//                                 <CardContent sx={{ p: 3 }}>
-//                                     <Stack
-//                                         direction="row"
-//                                         spacing={2}
-//                                         alignItems="center"
-//                                         sx={{ mb: 1 }}
-//                                     >
-//                                         <Box
-//                                             sx={{
-//                                                 p: 1.2,
-//                                                 borderRadius: 2,
-//                                                 bgcolor:
-//                                                     theme.palette.primary.light,
-//                                                 color: theme.palette.primary
-//                                                     .contrastText,
-//                                                 display: "inline-flex",
-//                                             }}
+//                 <Box sx={{ mb: { xs: 6, md: 10 }, overflowX: "clip" }}>
+//                     <Grid container spacing={3}>
+//                         {values.map((v) => (
+//                             <Grid item xs={12} md={3} key={v.title}>
+//                                 <Card
+//                                     sx={{
+//                                         height: "100%",
+//                                         border: `1px solid ${theme.palette.grey[200]}`,
+//                                         boxShadow:
+//                                             "0 4px 12px rgba(0,0,0,0.05)",
+//                                         overflow: "hidden",
+//                                     }}
+//                                 >
+//                                     <CardContent sx={{ p: 3 }}>
+//                                         <Stack
+//                                             direction="row"
+//                                             spacing={2}
+//                                             alignItems="center"
+//                                             sx={{ mb: 1 }}
 //                                         >
-//                                             {v.icon}
-//                                         </Box>
+//                                             <Box
+//                                                 sx={{
+//                                                     p: 1.2,
+//                                                     borderRadius: 2,
+//                                                     bgcolor:
+//                                                         theme.palette.primary
+//                                                             .light,
+//                                                     color: theme.palette.primary
+//                                                         .contrastText,
+//                                                     display: "inline-flex",
+//                                                     flexShrink: 0,
+//                                                 }}
+//                                             >
+//                                                 {v.icon}
+//                                             </Box>
+//                                             <Typography
+//                                                 variant="h6"
+//                                                 fontWeight={700}
+//                                                 sx={{ wordBreak: "break-word" }}
+//                                             >
+//                                                 {v.title}
+//                                             </Typography>
+//                                         </Stack>
 //                                         <Typography
-//                                             variant="h6"
-//                                             fontWeight={700}
+//                                             variant="body2"
+//                                             color="text.secondary"
 //                                         >
-//                                             {v.title}
+//                                             {v.desc}
 //                                         </Typography>
-//                                     </Stack>
-//                                     <Typography
-//                                         variant="body2"
-//                                         color="text.secondary"
-//                                     >
-//                                         {v.desc}
-//                                     </Typography>
-//                                 </CardContent>
-//                             </Card>
-//                         </Grid>
-//                     ))}
-//                 </Grid>
-
-//                 {/* TJENESTER */}
-//                 <Grid container spacing={4} sx={{ mb: { xs: 6, md: 10 } }}>
-//                     <Grid item xs={12} md={6}>
-//                         <Typography
-//                             variant="h4"
-//                             fontWeight={800}
-//                             sx={{ mb: 2 }}
-//                         >
-//                             Våre mest brukte tjenester
-//                         </Typography>
-//                         <List dense>
-//                             {[
-//                                 "Tømrertjenester",
-//                                 "Elektriker",
-//                                 "Rørlegger",
-//                                 "Bilmekaniker",
-//                                 "Blikkenslager",
-//                                 "Fasade og takvask",
-//                                 "Renhold",
-//                                 "Gartner",
-//                             ].map((t) => (
-//                                 <ListItem
-//                                     key={t}
-//                                     disableGutters
-//                                     sx={{ mb: 0.5 }}
-//                                 >
-//                                     <ListItemIcon sx={{ minWidth: 32 }}>
-//                                         <CheckIcon
-//                                             color="success"
-//                                             fontSize="small"
-//                                         />
-//                                     </ListItemIcon>
-//                                     <ListItemText primary={t} />
-//                                 </ListItem>
-//                             ))}
-//                         </List>
+//                                     </CardContent>
+//                                 </Card>
+//                             </Grid>
+//                         ))}
 //                     </Grid>
+//                 </Box>
 
-//                     <Grid item xs={12} md={6}>
-//                         <Card
-//                             sx={{
-//                                 height: "100%",
-//                                 border: `1px solid ${theme.palette.grey[200]}`,
-//                                 display: "flex",
-//                                 flexDirection: "column",
-//                             }}
-//                         >
-//                             <CardContent sx={{ p: 3 }}>
-//                                 <Typography
-//                                     variant="h6"
-//                                     fontWeight={700}
-//                                     sx={{ mb: 1 }}
+//                 {/* TJENESTER med “Vis mer / Vis færre” */}
+//                 <Box sx={{ mb: { xs: 6, md: 10 }, overflowX: "clip" }}>
+//                     <Grid container spacing={4}>
+//                         <Grid item xs={12} md={6}>
+//                             <Typography
+//                                 variant="h4"
+//                                 fontWeight={800}
+//                                 sx={{ mb: 2 }}
+//                             >
+//                                 Driftli tjenester
+//                             </Typography>
+
+//                             <List dense id="services-list">
+//                                 {top.map((t) => (
+//                                     <ListItem
+//                                         key={t}
+//                                         disableGutters
+//                                         sx={{ mb: 0.5 }}
+//                                     >
+//                                         <ListItemIcon sx={{ minWidth: 32 }}>
+//                                             <CheckIcon
+//                                                 color="success"
+//                                                 fontSize="small"
+//                                             />
+//                                         </ListItemIcon>
+//                                         <ListItemText primary={t} />
+//                                     </ListItem>
+//                                 ))}
+
+//                                 <Collapse
+//                                     in={showAll}
+//                                     timeout="auto"
+//                                     unmountOnExit
 //                                 >
-//                                     Hvorfor velge oss?
-//                                 </Typography>
-//                                 <List dense>
-//                                     {[
-//                                         "Kvalitetssikrede fagfolk",
-//                                         "Fastpris og forutsigbare avtaler",
-//                                         "En kontakt som koordinerer alt",
-//                                         "Forsikret arbeid og HMS dokumentasjon",
-//                                         "Rask hjelp vanligvis innen 24 timer",
-//                                     ].map((t) => (
-//                                         <ListItem key={t} disableGutters>
+//                                     {rest.map((t) => (
+//                                         <ListItem
+//                                             key={t}
+//                                             disableGutters
+//                                             sx={{ mb: 0.5 }}
+//                                         >
 //                                             <ListItemIcon sx={{ minWidth: 32 }}>
 //                                                 <CheckIcon
 //                                                     color="success"
@@ -912,20 +650,83 @@
 //                                             <ListItemText primary={t} />
 //                                         </ListItem>
 //                                     ))}
-//                                 </List>
-//                             </CardContent>
-//                         </Card>
-//                     </Grid>
-//                 </Grid>
+//                                 </Collapse>
+//                             </List>
 
-//                 {/* TEAM — SENTRERT (uendret struktur) */}
+//                             {rest.length > 0 && (
+//                                 <Button
+//                                     variant="outlined"
+//                                     size="small"
+//                                     onClick={() => setShowAll((v) => !v)}
+//                                     aria-expanded={showAll}
+//                                     aria-controls="services-list"
+//                                     sx={{ mt: 1 }}
+//                                 >
+//                                     {showAll
+//                                         ? "Vis færre"
+//                                         : `Vis mer (${rest.length})`}
+//                                 </Button>
+//                             )}
+//                         </Grid>
+
+//                         <Grid item xs={12} md={6}>
+//                             <Card
+//                                 sx={{
+//                                     height: "100%",
+//                                     border: `1px solid ${theme.palette.grey[200]}`,
+//                                     display: "flex",
+//                                     flexDirection: "column",
+//                                     overflow: "hidden",
+//                                 }}
+//                             >
+//                                 <CardContent sx={{ p: 3 }}>
+//                                     <Typography
+//                                         variant="h6"
+//                                         fontWeight={700}
+//                                         sx={{ mb: 1 }}
+//                                     >
+//                                         Hvorfor velge oss?
+//                                     </Typography>
+//                                     <List dense>
+//                                         {[
+//                                             "Kvalitetssikrede fagfolk med dokumentert erfaring",
+//                                             "Forutsigbare avtaler og faste priser – ingen skjulte kostnader",
+//                                             "Én kontaktperson som koordinerer hele prosessen for deg",
+//                                             "Arbeid utført med forsikring og komplett HMS-dokumentasjon",
+//                                             "Rask respons – vanligvis innen 24 timer",
+//                                             "Tilgang til rabatterte priser gjennom våre rammeavtaler",
+//                                             "Ingen binding – bruk tjenesten når du trenger den",
+//                                             "Alle leverandører følger gjeldende regelverk",
+//                                             "Tilpasset privatpersoner, bedrifter og sameier",
+//                                             "Vi følger opp kvalitet og kundetilfredshet – hele veien",
+//                                         ].map((t) => (
+//                                             <ListItem key={t} disableGutters>
+//                                                 <ListItemIcon
+//                                                     sx={{ minWidth: 32 }}
+//                                                 >
+//                                                     <CheckIcon
+//                                                         color="success"
+//                                                         fontSize="small"
+//                                                     />
+//                                                 </ListItemIcon>
+//                                                 <ListItemText primary={t} />
+//                                             </ListItem>
+//                                         ))}
+//                                     </List>
+//                                 </CardContent>
+//                             </Card>
+//                         </Grid>
+//                     </Grid>
+//                 </Box>
+
+//                 {/* TEAM */}
 //                 <Box sx={{ mb: { xs: 6, md: 10 } }}>
 //                     <Typography
 //                         variant="h4"
 //                         fontWeight={800}
 //                         sx={{ textAlign: "center", mb: 1 }}
 //                     >
-//                         Møt teamet
+//                         Driftli teamet
 //                     </Typography>
 //                     <Typography
 //                         variant="h6"
@@ -938,14 +739,14 @@
 //                             mb: 8,
 //                         }}
 //                     >
-//                         Driftli forhandler frem rammeavtaler med faggrupper som
-//                         tømrer, elektriker, rørlegger, gartner, blikkenslager,
-//                         mekaniker og fritidsordninger. Som medlem får du tilgang
-//                         til disse avtalene og fordelene de gir. Ønsker du å bli
-//                         medlem og få tilgang til markedets beste rammeavtaler?
-//                         Kontakt oss i dag, eller bruk skjemaet ved siden av for
-//                         mer informasjon.
+//                         Vi hjelper privatpersoner, bedrifter og borettslag med å
+//                         få enklere tilgang til tjenester og lokale
+//                         fordelsavtaler. Som medlem får du gode priser,
+//                         kvalitetssikrede leverandører og én fast kontaktperson
+//                         som følger opp. Resultatet er bedre oversikt, tryggere
+//                         valg – og mer tid til det som betyr noe
 //                     </Typography>
+
 //                     <Grid container spacing={3} justifyContent="center">
 //                         {team.map((t) => (
 //                             <Grid item xs={12} sm={6} md={3} key={t.name}>
@@ -954,6 +755,7 @@
 //                                         height: "100%",
 //                                         textAlign: "center",
 //                                         border: `1px solid ${theme.palette.grey[200]}`,
+//                                         overflow: "hidden",
 //                                     }}
 //                                 >
 //                                     <CardContent sx={{ p: 3 }}>
@@ -991,9 +793,6 @@
 
 //                 {/* CTA */}
 //                 <Box sx={{ textAlign: "center" }}>
-//                     <Typography variant="h5" sx={{ mb: 2 }}>
-//                         Klar for å avtale befaring eller få pristilbud?
-//                     </Typography>
 //                     <Stack
 //                         spacing={2}
 //                         direction={{ xs: "column", sm: "row" }}
@@ -1013,9 +812,10 @@
 //                             Kontakt oss
 //                         </Button>
 //                         <Button
+//                             component="a"
+//                             href="tel:+4793220988"
 //                             variant="outlined"
 //                             size="large"
-//                             href="tel:+4793220988"
 //                             sx={{
 //                                 px: 4,
 //                                 py: 1.5,
@@ -1026,14 +826,6 @@
 //                             Ring oss direkte
 //                         </Button>
 //                     </Stack>
-//                     <Typography
-//                         variant="caption"
-//                         display="block"
-//                         color="text.secondary"
-//                         sx={{ mt: 1.5 }}
-//                     >
-//                         Vi tilbyr gratis befaring i Stavanger og Sandnes området
-//                     </Typography>
 //                 </Box>
 //             </Container>
 //         </Box>
@@ -1042,7 +834,7 @@
 
 // export default AboutUs;
 
-import React from "react";
+import React, { useState } from "react";
 import {
     Box,
     Container,
@@ -1058,16 +850,13 @@ import {
     ListItemText,
     useTheme,
     Stack,
+    Collapse,
 } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
-import ForestIcon from "@mui/icons-material/Forest";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import HubIcon from "@mui/icons-material/Hub";
-import GroupsIcon from "@mui/icons-material/Groups";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
-import BusinessIcon from "@mui/icons-material/Business";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
 
@@ -1079,26 +868,28 @@ function AboutUs() {
         threshold: 0.1,
     });
 
+    const [showAll, setShowAll] = useState(false);
+
     const values = [
         {
             icon: <VerifiedIcon />,
-            title: "Kvalitetssikrede fagfolk",
-            desc: "Vi samler seriøse leverandører på ett sted med dokumentert kompetanse, forsikring og HMS.",
+            title: "Vi forhandler – du får fordelen",
+            desc: "Du får tilgang til priser og vilkår som normalt er forbeholdt storkunder.",
         },
         {
             icon: <ReceiptLongIcon />,
-            title: "Fastpris og forutsigbarhet",
-            desc: "Klare avtaler uten overraskelser. Du vet hva som leveres og hva det koster.",
+            title: "Kvalitet du kan stole på",
+            desc: "Alle leverandører er nøye valgt ut og har dokumentert erfaring.",
         },
         {
             icon: <SupportAgentIcon />,
-            title: "Rask respons",
-            desc: "Behovskartlegging og oppstart raskt. Vi prioriterer hasteoppdrag når det trengs.",
+            title: "Rask tilgang til riktige aktører",
+            desc: "Vi prioriterer hastebehov og kobler deg raskt med riktig tjenesteyter.",
         },
         {
             icon: <HubIcon />,
-            title: "Én kontakt for alt",
-            desc: "Drift og koordinering i ett løp. Mindre mas for deg, bedre flyt i hverdagen.",
+            title: "En kontakt for alt",
+            desc: "Alt drift og koordinering samlet på ett sted – bedre flyt i hverdagen.",
         },
     ];
 
@@ -1108,23 +899,46 @@ function AboutUs() {
             role: "Daglig leder / Prosjekt",
             initials: "AH",
         },
-        { name: "Alexander Molde", role: "Salg / driftleder", initials: "AM" },
+        { name: "Alexander Molde", role: "Salg / driftsleder", initials: "AM" },
     ];
+
+    // 9 synlige punkter før “Vis mer”
+    const services = [
+        "Tømrertjenester",
+        "Taktekker",
+        "Rørlegger",
+        "Elektriker",
+        "Ventilasjonstekniker",
+        "Maler",
+        "Blikkenslager",
+        "Glassmester",
+        "Trappeleverandør",
+        "Kjøkkenleverandør",
+        "Baderomsinnredning",
+        "Renholdstjenester",
+        "Gartnerfirma",
+        "Vaktmestertjenester",
+        "Bilverksted",
+        "Dekkhotell",
+        "Fritidstilbud",
+        "Grunnarbeid og graving",
+        "Betongarbeid",
+        "Murer",
+    ];
+
+    const initialCount = 9;
+    const top = services.slice(0, initialCount);
+    const rest = services.slice(initialCount);
 
     return (
         <Box
             sx={{
                 py: { xs: 8, md: 12 },
-                // 🔒 Local fix: block horizontal scroll for this section only
                 overflowX: "clip",
                 position: "relative",
             }}
         >
-            <Container
-                maxWidth="lg"
-                // 🔧 Ensure mobile has padding so Grid negative margins don't overflow
-                sx={{ px: { xs: 2, sm: 3 } }}
-            >
+            <Container maxWidth="lg" sx={{ px: { xs: 2, sm: 3 } }}>
                 {/* HERO */}
                 <Box
                     ref={heroRef}
@@ -1139,12 +953,9 @@ function AboutUs() {
                             mb: 2,
                             letterSpacing: "-0.5px",
                             mt: 6,
-                            // 🧱 prevent words from forcing horizontal growth
-                            wordBreak: "break-word",
-                            overflowWrap: "anywhere",
                         }}
                     >
-                        Vedlikeholdsabonnement med profesjonelle avtaler
+                        Driftlis tjenestefordeler
                     </Typography>
                     <Typography
                         variant="h6"
@@ -1155,15 +966,14 @@ function AboutUs() {
                             fontWeight: 400,
                         }}
                     >
-                        Vi forhandler frem gode betingelser med kvalitetssikrede
-                        aktører. Med Driftli får du en enkel og forutsigbar
-                        løsning for drift og vedlikehold, med klare priser og
-                        trygg gjennomføring.
+                        Driftli gir deg tilgang til utvalgte leverandører og
+                        lokale fordelsavtaler med bedre vilkår, enklere tilgang
+                        og høyere trygghet.
                     </Typography>
                 </Box>
 
                 {/* VERDIER */}
-                <Box sx={{ mb: { xs: 6, md: 10 }, overflowX: "clip" }}>
+                <Box sx={{ mb: { xs: 6, md: 10 } }}>
                     <Grid container spacing={3}>
                         {values.map((v) => (
                             <Grid item xs={12} md={3} key={v.title}>
@@ -1173,8 +983,6 @@ function AboutUs() {
                                         border: `1px solid ${theme.palette.grey[200]}`,
                                         boxShadow:
                                             "0 4px 12px rgba(0,0,0,0.05)",
-                                        // 🚫 avoid card content creating overflow on mobile
-                                        overflow: "hidden",
                                     }}
                                 >
                                     <CardContent sx={{ p: 3 }}>
@@ -1202,7 +1010,6 @@ function AboutUs() {
                                             <Typography
                                                 variant="h6"
                                                 fontWeight={700}
-                                                sx={{ wordBreak: "break-word" }}
                                             >
                                                 {v.title}
                                             </Typography>
@@ -1221,7 +1028,7 @@ function AboutUs() {
                 </Box>
 
                 {/* TJENESTER */}
-                <Box sx={{ mb: { xs: 6, md: 10 }, overflowX: "clip" }}>
+                <Box sx={{ mb: { xs: 6, md: 10 } }}>
                     <Grid container spacing={4}>
                         <Grid item xs={12} md={6}>
                             <Typography
@@ -1229,19 +1036,11 @@ function AboutUs() {
                                 fontWeight={800}
                                 sx={{ mb: 2 }}
                             >
-                                Våre mest brukte tjenester
+                                Driftli tjenester
                             </Typography>
-                            <List dense>
-                                {[
-                                    "Tømrertjenester",
-                                    "Elektriker",
-                                    "Rørlegger",
-                                    "Bilmekaniker",
-                                    "Blikkenslager",
-                                    "Fasade og takvask",
-                                    "Renhold",
-                                    "Gartner",
-                                ].map((t) => (
+
+                            <List dense id="services-list">
+                                {top.map((t) => (
                                     <ListItem
                                         key={t}
                                         disableGutters
@@ -1256,15 +1055,53 @@ function AboutUs() {
                                         <ListItemText primary={t} />
                                     </ListItem>
                                 ))}
+
+                                <Collapse
+                                    in={showAll}
+                                    timeout="auto"
+                                    unmountOnExit
+                                >
+                                    {rest.map((t) => (
+                                        <ListItem
+                                            key={t}
+                                            disableGutters
+                                            sx={{ mb: 0.5 }}
+                                        >
+                                            <ListItemIcon sx={{ minWidth: 32 }}>
+                                                <CheckIcon
+                                                    color="success"
+                                                    fontSize="small"
+                                                />
+                                            </ListItemIcon>
+                                            <ListItemText primary={t} />
+                                        </ListItem>
+                                    ))}
+                                </Collapse>
                             </List>
-                            <Typography
-                                variant="body2"
-                                color="text.secondary"
-                                sx={{ mt: 2 }}
-                            >
-                                Vi skreddersyr service og vedlikeholdsplaner for
-                                privat, borettslag og bedrift
-                            </Typography>
+
+                            {rest.length > 0 && (
+                                <Button
+                                    variant="text"
+                                    size="small"
+                                    onClick={() => setShowAll((v) => !v)}
+                                    aria-expanded={showAll}
+                                    aria-controls="services-list"
+                                    sx={{
+                                        mt: 1,
+                                        fontWeight: 600,
+                                        textTransform: "none",
+                                        color: theme.palette.primary.main,
+                                        "&:hover": {
+                                            backgroundColor: "transparent",
+                                            textDecoration: "underline",
+                                        },
+                                    }}
+                                >
+                                    {showAll
+                                        ? "Vis færre"
+                                        : `Vis mer (${rest.length})`}
+                                </Button>
+                            )}
                         </Grid>
 
                         <Grid item xs={12} md={6}>
@@ -1274,7 +1111,6 @@ function AboutUs() {
                                     border: `1px solid ${theme.palette.grey[200]}`,
                                     display: "flex",
                                     flexDirection: "column",
-                                    overflow: "hidden",
                                 }}
                             >
                                 <CardContent sx={{ p: 3 }}>
@@ -1288,15 +1124,15 @@ function AboutUs() {
                                     <List dense>
                                         {[
                                             "Kvalitetssikrede fagfolk med dokumentert erfaring",
-                                            "Forutsigbare avtaler og faste priser ingen skjulte kostnader",
+                                            "Forutsigbare avtaler og faste priser – ingen skjulte kostnader",
                                             "Én kontaktperson som koordinerer hele prosessen for deg",
                                             "Arbeid utført med forsikring og komplett HMS-dokumentasjon",
-                                            "Rask respons vanligvis innen 24 timer",
+                                            "Rask respons – vanligvis innen 24 timer",
                                             "Tilgang til rabatterte priser gjennom våre rammeavtaler",
-                                            "Ingen binding bruk tjenesten når du trenger den",
-                                            " Trygghet i at alle leverandører er godkjente og følger gjeldende regelverk",
-                                            "Tjenester tilpasset både privatpersoner, bedrifter og sameier",
-                                            "Driftli følger opp kvalitet og kundetilfredshet vi er med hele veien",
+                                            "Ingen binding – bruk tjenesten når du trenger den",
+                                            "Alle leverandører følger gjeldende regelverk",
+                                            "Tilpasset privatpersoner, bedrifter og sameier",
+                                            "Vi følger opp kvalitet og kundetilfredshet – hele veien",
                                         ].map((t) => (
                                             <ListItem key={t} disableGutters>
                                                 <ListItemIcon
@@ -1324,7 +1160,7 @@ function AboutUs() {
                         fontWeight={800}
                         sx={{ textAlign: "center", mb: 1 }}
                     >
-                        Møt teamet
+                        Driftli teamet
                     </Typography>
                     <Typography
                         variant="h6"
@@ -1337,14 +1173,13 @@ function AboutUs() {
                             mb: 8,
                         }}
                     >
-                        Vi hjelper borettslag, bedrifter og private med alt fra
-                        praktiske tjenester til bilrelaterte behov og lokale
-                        fritidstilbud. Med én avtale får du tilgang til
-                        rammeavtaler for fordeler, kvalitetssikrede aktører og
-                        en kontaktperson som koordinerer alt. Enklere hverdag,
-                        bedre oversikt – og mer tid til det som betyr noe. Som
-                        medlem får du tilgang til rammeavtaler og fordeler
+                        Vi hjelper privatpersoner, bedrifter og borettslag med å
+                        få enklere tilgang til tjenester og lokale
+                        fordelsavtaler. Som medlem får du gode priser,
+                        kvalitetssikrede leverandører og én fast kontaktperson
+                        som følger opp.
                     </Typography>
+
                     <Grid container spacing={3} justifyContent="center">
                         {team.map((t) => (
                             <Grid item xs={12} sm={6} md={3} key={t.name}>
@@ -1353,7 +1188,6 @@ function AboutUs() {
                                         height: "100%",
                                         textAlign: "center",
                                         border: `1px solid ${theme.palette.grey[200]}`,
-                                        overflow: "hidden",
                                     }}
                                 >
                                     <CardContent sx={{ p: 3 }}>
@@ -1391,9 +1225,6 @@ function AboutUs() {
 
                 {/* CTA */}
                 <Box sx={{ textAlign: "center" }}>
-                    <Typography variant="h5" sx={{ mb: 2 }}>
-                        Klar for å avtale befaring eller få pristilbud?
-                    </Typography>
                     <Stack
                         spacing={2}
                         direction={{ xs: "column", sm: "row" }}
@@ -1413,9 +1244,10 @@ function AboutUs() {
                             Kontakt oss
                         </Button>
                         <Button
+                            component="a"
+                            href="tel:+4793220988"
                             variant="outlined"
                             size="large"
-                            href="tel:+4793220988"
                             sx={{
                                 px: 4,
                                 py: 1.5,
@@ -1426,14 +1258,6 @@ function AboutUs() {
                             Ring oss direkte
                         </Button>
                     </Stack>
-                    <Typography
-                        variant="caption"
-                        display="block"
-                        color="text.secondary"
-                        sx={{ mt: 1.5 }}
-                    >
-                        Vi tilbyr gratis befaring i Stavanger og Sandnes området
-                    </Typography>
                 </Box>
             </Container>
         </Box>

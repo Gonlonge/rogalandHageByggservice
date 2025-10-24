@@ -368,10 +368,12 @@ import gartnerWorking from "../../assets/house-garden.png";
 import houseGardenTwo from "../../assets/house-garden.png";
 
 const benefits = [
-    "Rask besvarelse – vanligvis innen 24t*",
-    "Smarte avtaler. Klare priser. Ferdig forhandlet.",
-    "Forsikret, ryddig og HMS-dokumentert arbeid",
-    "Vi samarbeider kun med verifiserte aktører",
+    "Rask respons – vi følger opp innen 24 timer",
+    "Storkunderabatter – priser du ikke får som privatperson",
+    "Ferdig forhandlede rammeavtaler – vi har gjort jobben for deg",
+    "Alt på ett sted – håndverk, bilverksted, fritidstilbud og mer",
+    "Trygghet og forutsigbarhet – kun seriøse & lokale leverandører",
+    "En kontaktflate – mange tjenester – enkelt, effektivt og oversiktlig",
 ];
 
 function CtaSection() {
@@ -465,8 +467,8 @@ function CtaSection() {
                                     color: theme.palette.common.white,
                                 }}
                             >
-                                Kvalitet i alt fra håndverk til vedlikehold –
-                                samlet i en profesjonell avtale
+                                Alt samlet fagfolk, tjenester og trygghet i en
+                                avtale.
                             </Typography>
 
                             <Typography
@@ -480,10 +482,10 @@ function CtaSection() {
                                     ),
                                 }}
                             >
-                                Vi leverer håndverk, service og vedlikehold
-                                innen alle fag: tømrer, elektriker, rørlegger,
-                                renhold, fasadevask, bilverksted og
-                                gartnerarbeid – ryddig og forutsigbart.
+                                Vi tilbyr et bredt spekter av
+                                håndverkstjenester, vedlikehold av bil å hus og
+                                fritidsrelaterte løsninger strukturert,
+                                kvalitetssikret og enkelt for deg.
                             </Typography>
 
                             {/* Fordeler */}
@@ -546,7 +548,7 @@ function CtaSection() {
                                     variant="contained"
                                     color="secondary"
                                     size="large"
-                                    href="tel:+4793220988"
+                                    href="/contact"
                                     endIcon={<ArrowForwardIcon />}
                                     fullWidth
                                     sx={{
@@ -585,7 +587,7 @@ function CtaSection() {
                                         },
                                     }}
                                 >
-                                    Kontakt oss
+                                    Bli medlem
                                 </Button>
 
                                 {/* Se tjenester */}
@@ -639,7 +641,8 @@ function CtaSection() {
                                     ),
                                 }}
                             >
-                                *Gjelder hverdager i Rogaland.
+                                *Rogalandsbasert oppstart med nasjonale
+                                ambisjoner
                             </Typography>
                         </Box>
                     </Grid>

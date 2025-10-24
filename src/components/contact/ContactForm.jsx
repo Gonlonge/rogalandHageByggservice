@@ -914,9 +914,9 @@ import aleksanderPhoto from "../../assets/workers/aleksander.png";
 import alexPhoto from "../../assets/workers/alex.jpg";
 
 const inquiryTypes = [
+    { value: "Bli medlem", label: "Bli medlem" },
     { value: "Generell forespørsel", label: "Generell forespørsel" },
     { value: "befaring", label: "Ønsker befaring" },
-    { value: "Bli medlem", label: "Bli medlem" },
     { value: "Pris/tilbud", label: "Pris/tilbud" },
 ];
 
@@ -947,7 +947,7 @@ function ContactForm() {
         email: "",
         company: "",
         phone: "",
-        inquiryType: "Generell forespørsel", // ✅ forhåndsvalgt verdi
+        inquiryType: "Bli medlem", // ✅ forhåndsvalgt verdi
         message: "",
     });
 
@@ -1055,7 +1055,7 @@ function ContactForm() {
                                 component="h1"
                                 sx={{ fontWeight: 700, mb: 1 }}
                             >
-                                Kontakt Driftli AS
+                                Kontakt oss
                             </Typography>
 
                             <Typography
@@ -1066,11 +1066,11 @@ function ContactForm() {
                                     maxWidth: 480,
                                 }}
                             >
-                                Vi hjelper borettslag, bedrifter og private i
-                                Rogaland med alt innen drift og vedlikehold fra
-                                tømrer, elektriker og rørlegger til renhold,
-                                fasadevask og gartnerarbeid. Ta kontakt for et
-                                fast og forutsigbart samarbeid
+                                Driftli forhandler rammeavtaler innen
+                                yrkesrelaterte tjenester, bilrelaterte tjenester
+                                og fritidstilbud. Medlemskapet gir tilgang til
+                                profesjonelle leverandører, gode priser og full
+                                oversikt.
                             </Typography>
 
                             <Stack spacing={4}>

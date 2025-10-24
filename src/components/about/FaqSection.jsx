@@ -23,7 +23,7 @@ const faqItems = [
     },
     {
         question: "Hvordan bli medlem",
-        answer: "For å bli medlem, velg «Bli medlem» i nedtrekksmenyen der det står «Generell forespørsel». Deretter blar du ned til feltet «Bli medlem», fyller inn informasjonen din og sender inn skjemaet.",
+        answer: "For å bli medlem, fyll ut kontaktinformasjonen din og send oss en henvendelse via skjemaet på kontaktside. Du kan også ta kontakt direkte med oss via telefon eller e-post.",
     },
     {
         question: "Hvordan fungerer medlemskapet?",
@@ -35,15 +35,15 @@ const faqItems = [
     },
     {
         question: "Hva koster det å bruke Driftli?",
-        answer: "Selve medlemstjenesten koster ingenting. Du betaler kun for utført arbeid eller avtalt vedlikehold. Driftli forhandler ned prisene på vegne av medlemmene slik at du får tilgang til profesjonelle betingelser.",
+        answer: "Medlemskapet i Driftli koster 199 kr per måned. Du betaler kun for utført arbeid eller avtalt vedlikehold. Driftli forhandler ned prisene på vegne av medlemmene, slik at du får tilgang til profesjonelle betingelser og rabatter du normalt ikke ville fått som enkeltkunde.",
     },
     {
-        question: "Kan jeg velge mine egne leverandører?",
-        answer: "Du kan bruke egne leverandører, men Driftli anbefaler våre godkjente partnere. De er forhåndskvalifisert på pris, forsikring, HMS og service. Dette gir trygghet, bedre oppfølging og garantier gjennom oss.",
+        question: "Hvordan velger Driftli leverandører?",
+        answer: "Driftli velger leverandører gjennom en grundig kvalitetssikringsprosess. Vi vurderer fagbrev, erfaring, referanser, forsikringer og HMS-system før de blir godkjent som samarbeidspartnere. Bare aktører som oppfyller våre krav til kvalitet, pålitelighet og service blir en del av nettverket.",
     },
     {
-        question: "Er fagfolkene forsikret og godkjent?",
-        answer: "Ja. Alle leverandører i Driftli-nettverket har dokumentert fagbrev, ansvarsforsikring og HMS-system. Vi godkjenner ikke aktører uten gyldig dokumentasjon.",
+        question: "Gir et lengre medlemskap ekstra fordeler?",
+        answer: "Ja. Som medlem får du allerede tilgang til eksklusive avtaler og rabatter. Men vi ønsker å gi litt ekstra til dem som er med oss over tid. Derfor jobber vi med et lojalitetsprogram som gir deg enda bedre fordeler jo lenger du er medlem – som høyere rabattsatser, prioritert tilgang og spesialtilbud. Det skal lønne seg å være trofast.",
     },
     {
         question: "Hvordan inngår jeg en vedlikeholdsavtale?",
@@ -67,7 +67,7 @@ const faqItems = [
     },
     {
         question: "Kan jeg si opp avtalen når som helst?",
-        answer: "Ja, du kan si opp medlemskapet på dagen uten bindingstid eller skjulte gebyrer. Vær oppmerksom på at fordeler og rabatter opphører straks, og for å få tilgang til dem igjen må du melde deg inn på nytt og betale medlemsavgift.",
+        answer: "Ja, du kan si opp medlemskapet med 30 dagers oppsigelsestid, uten bindingstid eller skjulte gebyrer. Vær oppmerksom på at fordeler og rabatter opphører når oppsigelsestiden er utløpt. For å få tilgang til dem igjen må du melde deg inn på nytt og betale medlemsavgift.",
     },
     {
         question: "Hvordan kontakter jeg kundeservice?",

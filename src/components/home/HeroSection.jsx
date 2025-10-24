@@ -140,13 +140,14 @@ function HeroSection() {
                                     },
                                 }}
                             >
-                                En avtale. Alle fordelene. Driftli gir
-                                privatpersoner og bedrifter enkel tilgang til
-                                profesjonelle fagfolk, forutsigbare priser og
-                                høy kvalitet. Vi forhandler rammeavtaler på dine
-                                vegne og sørger for at du alltid får de beste
-                                betingelsene. Slik gjør vi drift og vedlikehold
-                                enklere, tryggere og mer lønnsomt år etter år.
+                                Driftli gir privatpersoner og bedrifter tilgang
+                                til fordeler man normalt bare får som stor
+                                kunde. Vi forhandler rammeavtaler med diverse
+                                yrkestjenester, fritidstilbydere og bilrelaterte
+                                tjenester – og samler alt i et enkelt
+                                vedlikeholdsabonnement. Med Driftli får du
+                                kvalitetssikrede leverandører, faste priser og
+                                mindre administrasjon
                             </Typography>
 
                             <Stack
@@ -159,7 +160,7 @@ function HeroSection() {
                                     "Tømrertjenester",
                                     "Elektriker",
                                     "Rørlegger",
-                                    "Bilmekaniker",
+                                    "Bilverksted",
                                     "Blikkenslager",
                                     "Fasade og takvask",
                                     "Renhold",
@@ -202,7 +203,7 @@ function HeroSection() {
                                     variant="contained"
                                     color="secondary"
                                     size="large"
-                                    href="tel:+4793220988"
+                                    href="/contact"
                                     endIcon={<ArrowForwardIcon />}
                                     sx={{
                                         borderRadius: 2,
@@ -232,7 +233,7 @@ function HeroSection() {
                                         transition: "all .25s ease",
                                     }}
                                 >
-                                    Kontakt oss
+                                    Bli medlem
                                 </Button>
 
                                 <Button

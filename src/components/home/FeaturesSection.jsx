@@ -368,7 +368,7 @@ const features = [
         image: imgRørlegger,
     },
     {
-        title: "Bilmekaniker",
+        title: "Bilverksted",
         icon: <CarRepairIcon sx={{ fontSize: 22 }} />,
         description:
             "Service, reparasjon og vedlikehold av bilen – for trygg, effektiv og problemfri kjøring året rundt.",
@@ -440,14 +440,14 @@ export default function FeaturesSection() {
                             color: theme.palette.primary.main,
                         }}
                     >
-                        TJENESTER
+                        Driftli
                     </Typography>
                     <Typography
                         variant="h2"
                         component="h2"
                         sx={{ fontWeight: 800, mb: 2 }}
                     >
-                        Medlemsfordeler for private og bedrifter
+                        Noen av våre tjenester
                     </Typography>
                     <Typography
                         variant="h6"
@@ -458,8 +458,10 @@ export default function FeaturesSection() {
                             fontWeight: 400,
                         }}
                     >
-                        Høy kvalitet, ryddig gjennomføring og dokumentert
-                        resultat – med fleksible avtaler og trygge leverandører.
+                        Her viser vi et utvalg av våre yrkesrelaterte tjenester
+                        medlemskapet gir deg tilgang til mange flere
+                        profesjonelle leverandører innen vedlikehold,
+                        bilrelaterte tjenester og fritidstilbud.
                     </Typography>
                 </Box>
 
