@@ -467,7 +467,7 @@ function CtaSection() {
                                     color: theme.palette.common.white,
                                 }}
                             >
-                                Alt samlet fagfolk, tjenester og trygghet i en
+                                Alt samlet - fagfolk, tjenester og trygghet i en
                                 avtale.
                             </Typography>
 
