@@ -1,7 +1,7 @@
-import FeatureDetails from "../components/features/FeatureDetails";
+// import FeatureDetails from "../components/features/FeatureDetails";
 
-function FeatureDetailsPage() {
-    return <FeatureDetails />;
-}
+// function FeatureDetailsPage() {
+//     return <FeatureDetails />;
+// }
 
-export default FeatureDetailsPage;
+// export default FeatureDetailsPage;

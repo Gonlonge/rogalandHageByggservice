@@ -8,7 +8,7 @@ import ContactPage from "./pages/ContactPage";
 import AdminPage from "./pages/AdminPage";
 import LoginPage from "./pages/LogInPage";
 
-import FeatureDetailsPage from "./pages/FeatureDetailsPage";
+// import FeatureDetailsPage from "./pages/FeatureDetailsPage";
 
 function App() {
     const { pathname } = useLocation();
@@ -36,10 +36,10 @@ function App() {
                     <Route path="/contact" element={<ContactPage />} />
                     <Route path="/admin" element={<AdminPage />} />
                     <Route path="/loginpage" element={<LoginPage />} />
-                    <Route
+                    {/* <Route
                         path="/funksjoner/:slug"
                         element={<FeatureDetailsPage />}
-                    />
+                    /> */}
                 </Routes>
             </main>
             <Footer />
